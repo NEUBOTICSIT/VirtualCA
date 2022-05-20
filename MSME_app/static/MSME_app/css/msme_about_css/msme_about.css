@@ -1,0 +1,407 @@
+
+
+body{
+  overflow-x: hidden;
+
+}
+/* start About Us */
+.about{
+    background-image:url('../../images/about_images/Live-Wave-Background.svg') ;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+/* start about */
+.about_animation {
+  white-space: nowrap;
+  overflow: hidden;
+  font-family:  'Inter', sans-serif;
+  font-size: 29px;
+  color: #fff ;
+  margin-top:50px;
+  padding-top:60px;
+}
+
+.about_animation {
+  animation: animated-text 2s steps(30,end) 0s 1 normal both;
+}
+/* text animation */
+/* hover about us */
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #fff;
+}
+
+ .about_animation.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/* hover end about us */
+ /* End About US  */
+ /* Start services */
+
+.services{
+
+     width: 100%;
+     background-image: url('../../images/about_images/Bubble-Background.svg');
+     background-repeat:no-repeat;
+     background-size:cover;
+     padding-left:90px;
+}
+
+h1{
+   text-align:center;
+   margin: 0px auto 95px !important;
+   color: #fff;
+}
+.main{
+   width:100%;
+   min-height:360px;
+   text-align: center;
+   position: relative;
+   cursor:pointer;
+   margin-bottom: 5px;
+}
+.service{
+      background: #fff;
+      border-radius: 30px;
+      position: absolute;
+       bottom :1 ;
+      z-index: 1;
+      box-shadow: 0 0 30px -15px #030380;
+      transition: transform .8s;
+ }
+
+.service-logo{
+      width: 120px;
+      height: 120px;
+      border-radius: 30%;
+      margin: -60px auto 0;
+      background: #fff;
+      border: 17px solid #007bff;
+}
+.service-logo img{
+     height:70px;
+     width: 70px;
+     margin-top: 5px;
+     transition: transform 1s;
+}
+.service h4{
+      height: 60px;
+      width: 90%;
+      background: #fff;
+      margin: 50px auto;
+      position: relative;
+}
+.service h4::after{
+       content: '';
+       width: 40px;
+       height: 30px;
+       background: linear-gradient(to right, #fff,#007bff);
+       position: absolute;
+       right: -5px;
+       top: -5px;
+       z-index: -1;
+}
+.service h4::before{
+        content: '';
+        width: 40px;
+        height: 30px;
+       background: linear-gradient(to right,#007bff,#fff);
+        position: absolute;
+        left: -5px;
+        bottom: -7px;
+        z-index: -1;
+}
+.shadowOne{
+      height: 200px;
+      width: 100%;
+      background: #fff;
+      position: absolute;
+      border-radius: 10px;
+      bottom: 0;
+      left: 10%;
+      z-index: -1;
+  /*    box-shadow: 0 0 10px -10px #030380; */
+      transition: transform .8s;
+}
+.shadowTwo{
+       height: 200px;
+       width: 64%;
+       background: #fff;
+       position: absolute;
+       border-radius: 20px;
+       bottom: 0;
+       left: 18%;
+       z-index: -2;
+}
+.main:hover .service{
+      transform: translateY(50px);
+}
+.main:hover .shadowOne{
+      transform: translateY(25px);
+}
+.main:hover img{
+      transform: rotate(360deg);
+}
+/* End service */
+
+.hover-underline-animation {
+display: inline-block;
+position: relative;
+color: #fff;
+}
+/* start  msme details */
+.second.hover-underline-animation:after {
+content: '';
+position: absolute;
+width: 100%;
+transform: scaleX(0);
+height: 2px;
+bottom: 0;
+left: 0;
+background-color:#007bff;
+transform-origin: bottom right;
+transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* start  msme details */
+
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 472px;}
+}
+/*msme_steps*/
+.box {
+  float: left;
+  height: 20px;
+  width: 20px;
+  margin-bottom: 15px;
+  border: 1px solid black;
+  clear: both;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+
+
+
+/* text animation */
+/* hover about us */
+.a{
+  white-space: nowrap;
+  overflow: hidden;
+  font-family:  'Inter', sans-serif;
+  font-size: 29px;
+  color: #fff ;
+  margin-top:50px;
+  padding-top:60px;
+}
+
+/* MSME Registration */
+
+.msme_animation {
+  white-space: nowrap;
+  overflow: hidden;
+  font-family:  'Inter', sans-serif;
+  font-size: 29px;
+  color:#e05e22 ;
+
+}
+
+.msme registration {
+  animation: animated-text 2s steps(30,end) 0s 1 normal both;
+}
+
+.hover-animation {
+  display: inline-block;
+  position: relative;
+  color: ;
+}
+
+ .msme_animation.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007bff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+/* MSME Registration */
+ /* START  msme ENTERPRISES */
+ .msme_animation {
+  white-space: nowrap;
+  overflow: hidden;
+  font-family:  'Inter', sans-serif;
+  font-size: 29px;
+  color:#e05e22 ;
+
+}
+. MSME Enterprises {
+  animation: animated-text 2s steps(30,end) 0s 1 normal both;
+}
+
+.hover-animation {
+  display: inline-block;
+  position: relative;
+  color: ;
+}
+.msme_animation.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007bff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/* END  msme ENTERPRISES */
+/* start SSI Registration Steps */
+.msme_animation {
+  white-space: nowrap;
+  overflow: hidden;
+  font-family:  'Inter', sans-serif;
+  font-size: 29px;
+  color:#e05e22 ;
+
+}
+. MSME  SSI Registration Steps {
+  animation: animated-text 2s steps(30,end) 0s 1 normal both;
+}
+ .hover-animation {
+  display: inline-block;
+  position: relative;
+  color: ;
+}
+ .msme_animation.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007bff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/* END  msme  SSI Registration Steps */
+/* start Documents Required For MSME */
+.msme_animation {
+  white-space: nowrap;
+  overflow: hidden;
+  font-family:  'Inter', sans-serif;
+  font-size: 29px;
+  color:#e05e22 ;
+
+}
+.Documents Required For MSME  {
+  animation: animated-text 2s steps(30,end) 0s 1 normal both;
+}
+ .hover-animation {
+  display: inline-block;
+  position: relative;
+  color: ;
+}
+.msme_animation.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007bff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/* End Documents Required For MSME */
+  /* start Benefits Of MSME Registration */
+.msme_animation {
+  white-space: nowrap;
+  overflow: hidden;
+  font-family:  'Inter', sans-serif;
+  font-size: 29px;
+  color:#e05e22 ;
+
+}
+.Benefits Of MSME Registration  {
+  animation: animated-text 2s steps(30,end) 0s 1 normal both;
+}
+.hover-animation {
+  display: inline-block;
+  position: relative;
+  color: ;
+}
+.msme_animation.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007bff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/* end Benefits Of MSME Registration */

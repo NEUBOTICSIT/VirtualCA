@@ -1,0 +1,198 @@
+
+{% extends 'GST_app/BASECODE/gst_base.html' %}{% load static %}
+
+{% block gst_content %}
+
+
+
+
+<div class="text-center">
+
+    <h2><b>GST Registration Application Form | Taxpayer</b></h2>
+
+</div>
+<div>
+   <hr style="height:2px;border-width:0;color:gray;background-color:black">
+</div>
+
+<div class="container  shadow-lg p-3 mb-5 bg-body rounded">
+            <form method="POST">{%csrf_token%}
+             <div class="text-center">
+              <h2 style="background-color :#0077b5;"><b style="color:white; font size:20px;">GST Registration</b></h2>
+             </div>
+
+  <div class="row mt-3">
+
+       <h4 style="color:blue;"><b>General Details </b></h4>
+        <div class="col-sm-4">
+      <label for="Name1"><h6 style="color:black;"><b>Applicant Full Name / आवेदक का पूर्ण नाम<b style="color:red;">*</b></b></h6></label>
+      <input type="text" class="form-control"  id="Name1" name="Firstname" placeholder="Full Application" autocomplete="false" required>
+        </div>
+
+        <div class="col-sm-4">
+            <label for="Name2"><h6 style="color:black;"><b>Name of Firm / फर्म का नाम<b style="color:red;">*</b></b></h6></label>
+            <input type="text" class="form-control" id="Name2" name="Firstname"  placeholder="Business Firm Name" autocomplete="false" required>
+
+            </div>
+
+                <div class="col-sm-4">
+            <label><h6 style="color:black;"><b>Type of Business Entity / व्यापार का प्रकार<b style="color:red;">*</b></b></h6></label>
+          <select id="gender" name="business_type" required>
+              <option value="">Type of Business Entity</option>
+              <option value="Sole Proprietor">Sole Proprietor</option>
+              <option value="Private Limited Company">Private Limited Company</option>
+             <option value="Public Limited Company">Public Limited Company</option>
+             <option value="LLP">LLP</option>
+             <option value="OPC">OPC</option>
+             <option value="Society">Society</option>
+           <option value="Trust">Trust</option>
+           <option value="Others">Others</option>
+            </select>
+                </div>
+  </div>
+
+                 <div class="row mt-3">
+                     <div class="col-sm-4">
+
+                     <label for="Name1"><h6 style="color:black;"><b>Complete address of the principal place of business
+                     व्यवसाय के प्रमुख स्थान का पूरा पता<b style="color:red;">*</b></b></h6></label>
+                     <input type="text" class="form-control" name="Firstname" placeholder="Complete address with city & pincode" autocomplete="false" required>
+
+                     </div>
+
+
+                       <div class="col-sm-4">
+            <label for="Name3"><h6 style="color:black;"><b>Complete address of additional place of business
+व्यवसाय के अतिरिक्त स्थान का पूरा पता<b style="color:red;">*</b></b></h6></label>
+            <input type="text" class="form-control" id="Name3" name="Firstname" placeholder="Additional place of business, if any." autocomplete="false" required>
+
+            </div>
+
+                <div class="col-sm-4">
+            <label for="Name4"><h6 style="color:black;"><b>List of Goods & Services
+आपके द्वारा बेची जाने वाली वस्तुओं और सेवाओं की सूची<b style="color:red;">*</b></b></h6></label>
+            <input type="text" class="form-control" id="Name4" name="Firstname" placeholder="Enter goods & services" autocomplete="false" required>
+
+                </div>
+
+                 </div>
+
+
+                <div class="row mt-3">
+                     <div class="col-sm-4">
+
+           <label for="Name5"><h6 style="color:black;"><b>Nature of Business Activity / व्यवसाय गतिविधि की प्रकृति<b style="color:red;">*</b></b></h6></label>
+            <input type="text" class="form-control" id="Name5" name="Firstname"  autocomplete="false" required>
+                     </div>
+
+
+                      <div class="col-sm-4">
+                    <label for="Name2" style="padding-bottom:10px">
+                      <b> Mobile Number/मोबाइल नंबर </b>
+
+                      <b style="color:red;">*</b>
+                    </label>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">+91</span>
+                    <input type="tel" class="form-control"  pattern="[0-9]{10}" name="mobile" id="Name2" placeholder="Name as per Aadhaar" autocomplete="false"  required>
+                    </div>
+            </div>
+
+                <div class="col-sm-4">
+            <label for="Name7"><h6 style="color:black;"><b>Email Address / ईमेल पता<b style="color:red;">*</b></b></h6></label>
+            <input type="text" class="form-control" id="Name7" name="Firstname"  autocomplete="false" required>
+
+                </div>
+
+   <div class="row mt-3">
+     <div class="col-sm-6">
+  <label for="Name8"><h6 style="color:black;"><b>Date of commencement of business
+व्यवसाय शुरू करने की तारीख<b style="color:red;">*</b></b></h6></label>
+            <input type="date" class="form-control" id="Name8" name="Firstname" placeholder="DD-MM-YYYY"  autocomplete="false" required>
+     </div>
+
+
+
+         <div class="col-sm-6">
+                <h6 style="color:black;"><b>Do you want to opt composition scheme?
+                    क्या आप कंपोजिशन स्कीम का विकल्प चुनना चाहते हैं?<b style="color:red;">*</b></b></h6>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">YES</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked="checked">
+                  <label class="form-check-label" for="flexRadioDefault2">NO</label>
+                </div>
+            </div>
+   </div>
+
+          <br>
+                <div>
+                    <hr>
+               <br>
+                    <p style="color:black;"> I here by declare that information provided in the online registration form is true to the best of my knowledge and I accept terms, disclaimer, and policies by clicking "Submit Application" button.</p>
+                </div>
+
+
+                    <div>
+                    <br>
+                     <input type="checkbox" name="prop_declaration_box" value="1" id="tc" />
+                              <a href="https://www.meraprofit.com/terms-and-conditions" target="_blank" class="declaration_condition_link">
+                                <b>
+                                  <u>I Agree ALL Terms And Conditions</u>
+                                </b>
+                              </a>
+
+                    <div class="text-center">
+
+                   <br>
+                          <button class="btn btn-primary" type="submit">Submit Application</button>
+                    </div>
+                    <hr style="height:2px;border-width:0;color:gray;background-color:black">
+
+
+                </div>
+                </div>
+            </form>
+</div>
+ <section>
+<div class="container">
+    <div class="row text-center ">
+      <div class="col-sm-4">
+        <img class=" zoom" src="{% static 'GST_app/images/security-lock.png'%}" height="50px" width="50px">
+        <h5 style="color:#02475E;">
+         <b> 100% Secure Payments</b>
+        </h5>
+        <p style="font-size:15px">
+          Moving Your Card details to a much more secured place
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <img class=" zoom" src="{% static 'GST_app/images/thumb1.jpg'%}" height="50px" width="50px">
+        <h5 style="color:#02475E;">
+          <b>Trust Pay</b>
+         </h5>
+        <p style="font-size:15px">
+          100% Secure payments. SSL Protection
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <img class=" zoom" src="{% static 'GST_app/images/support-icon1.png'%}" height="50px" width="50px">
+
+        <h5 style="color:#02475E;">
+          <b>Support</b>
+         </h5>
+        <p style="font-size:15px">
+          We're here to help.Have a query & need help? Click here..
+        </p>
+      </div>
+    </div>
+  </div>
+    </section>
+
+
+
+
+
+{% endblock gst_content %}

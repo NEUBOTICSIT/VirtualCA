@@ -1,0 +1,126 @@
+{% extends 'CA_app/BASECODE/CA_app_base.html' %}
+{% block content %}
+{% load static %}
+
+<section class="enquiry-sec">
+      <div class="container">
+        <h2>Tax <span>Filing</span>
+        </h2>
+      </div>
+
+</section>
+<div class="container">
+     <div class="row">
+
+       <div class="col-sm-4">
+           <div class="services-box-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+            <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+            <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+            <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+          </svg>
+           <a class="serviceA" href="{% url 'business'%}">
+          <div class="icons">
+            <img src="{% static 'CA_app/images/tax_filing_img/business_tax.png'%}" height="70px" width="70px" alt="" title="">
+          </div>
+          <h4>Business Tax Filing</h4>
+  <p>Find Business Tax Filing On Info.com & Explore Tax Filing. Explore Tax Filing With Info.com. Search Business Tax Filing Fast. </p>
+           </a></div>
+
+       </div>
+
+<div class="col-sm-4">
+ <div class="services-box-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+              <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+              <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+              <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+              <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+            </svg>
+     <a class="serviceA" href="{% url 'esi'%}">
+            <div class="icons">
+              <img src="{% static 'CA_app/images/tax_filing_img/ESI-RETURN.jpeg'%}" alt="" title="">
+            </div>
+            <h4>ESI Return</h4>
+            <p> ESI registered businesses have to file ESI returns on monthly basis.</p>
+
+     </a></div>
+
+       </div>
+
+ <div class="col-sm-4">
+
+   <div class="services-box-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+                <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+                <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+              </svg>
+       <a class="serviceA" href="{% url 'GST_Filing'%}">
+              <div class="icons">
+                <img src="{% static 'CA_app/images/tax_filing_img/gst-return.png'%}" alt="" title="">
+              </div>
+              <h4>GST Return Filing</h4>
+              <p>A GST return is a document containing details of all income/sales and/or expense/purchase which a taxpayer (every GSTIN) is required to file .</p>
+
+       </a></div>
+     </div>
+
+
+     <div class="row">
+       <div class="col-sm-4">
+         <div class="services-box-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                  <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+                  <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+                  <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                  <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+                </svg>
+             <a class="serviceA" href="{% url 'incometax'%}">
+                <div class="icons">
+                  <img src="{% static 'CA_app/images/tax_filing_img/Income-Tax-1.png'%}" height="70px" width="70px" alt="" title="">
+                </div>
+                <h4>Income Tax Filing</h4>
+                <p>CA Office can help you with income tax return filing.</p>
+
+             </a></div>
+       </div>
+
+         <div class="col-sm-4">
+
+          <div class="services-box-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                    <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+                    <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+                    <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                    <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+                  </svg>
+
+               <a class="serviceA" href="{% url 'tds_return'%}">
+                  <div class="icons">
+                    <img src="{% static 'CA_app/images/tax_filing_img/tds.jpg'%}" height="80px" width="70px" alt="" title="">
+                  </div>
+                  <h4>TDS Return</h4>
+                  <p>Preparations of Project Reports, Preparation of CMA data for bank loans, Private placement of shares.</p>
+
+         </a> </div>
+       </div>
+
+
+         </div>
+
+     </div>
+     </div>
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

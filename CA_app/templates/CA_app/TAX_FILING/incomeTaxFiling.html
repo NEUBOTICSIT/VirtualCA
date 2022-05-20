@@ -1,0 +1,32 @@
+{% extends 'CA_app/BASECODE/CA_app_base.html' %}
+{% block content %}
+{% load static %}
+<section style="padding:50px">
+     <div class="text-center">
+     <h2 class="hover-underline-animation">Income Tax Filing </h2>
+    </div>
+<div class="container mt-3">
+<br>
+
+    <br>
+    <div class="row">
+        <div class="col-sm-6">
+
+  <img class="taximg1" height="300px" width="500px" src="{% static 'CA_app/images/tax_filing_img/Income-Tax-1.png'%}" alt="Pineapple" >
+        </div>
+
+        <div class="col-sm-6">
+      <p class="texfill">CA Office can help you with income tax return filing.</p>
+       <ol  class="texfill" >
+        <li >Document Collection</li>
+        <li>Return Prepartion</li>
+        <li>Return Filing</li>
+    </ol>
+        </div>
+    </div>
+
+</div>
+</section>
+
+
+{% endblock content %}

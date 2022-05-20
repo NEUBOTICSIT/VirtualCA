@@ -1,0 +1,437 @@
+
+
+
+
+<footer class="ms-5px" style="background-color:#f8f9fa">
+      <div class="footer-link">
+        <div class="container">
+          <div class="row" >
+            <div class="col-sm-2">
+              <h2 >Quick Links </h2>
+              <ul class="foot-link-list">
+                <li>
+                  <a href="{%url 'gst_home'%}">
+                    <span  class="hover-underline-animation" style="color:#0077b5">GST Registration</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{%url 'msme_about'%}">
+                    <span  class="hover-underline-animation" style="color:#0077b5"> MSME Registration</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{%url 'blog'%}">
+                    <span  class="hover-underline-animation" style="color:#0077b5">Blog</span>
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+            <div class="col-sm-2">
+              <h2 >Services </h2>
+              <ul class="foot-link-list">
+                <li>
+                  <a href="{% url 'international_Services'%}">
+                    <span  class="hover-underline-animation" style="color:#0077b5">International Services</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{% url 'Income_Tax'%}">
+                    <span  class="hover-underline-animation" style="color:#0077b5">Income_Tax</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{% url 'Accounting'%}">
+                    <span  class="hover-underline-animation" style="color:#0077b5">Accounting</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{% url 'GST'%}">
+                    <span  class="hover-underline-animation" style="color:#0077b5">GST</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{% url 'Payroll'%}">
+                    <span  class="hover-underline-animation" style="color:#0077b5">Payroll</span>
+                  </a>
+                </li>
+
+
+              </ul>
+            </div>
+              <div class="col-sm-2">
+
+              <ul class="foot-link-list">
+
+
+                   <li class="mt-4">
+                  <a href="{% url 'Corporate_Finance'%}">
+                    <span  class="hover-underline-animation" style="color:#0077b5">Corporate Finance</span>
+                  </a>
+                </li>
+
+                   <li>
+                  <a href="{% url 'Audit'%}">
+                    <span  class="hover-underline-animation" style="color:#0077b5">Audit</span>
+                  </a>
+                </li>
+
+                   <li>
+                  <a href="{% url 'TDS'%}">
+                    <span  class="hover-underline-animation" style="color:#0077b5">TDS</span>
+                  </a>
+                </li>
+
+                   <li>
+                  <a href="{% url 'Corporate_Services'%}">
+                    <span  class="hover-underline-animation" style="color:#0077b5">Corporate_Services</span>
+                  </a>
+                </li>
+
+                    <li>
+                  <a href="{% url 'Outsourcing'%}">
+                    <span  class="hover-underline-animation" style="color:#0077b5">Outsourcing</span>
+                  </a>
+                </li>
+                    <li>
+                  <a href="{% url 'Service_Non_Resident'%}">
+                    <span  class="hover-underline-animation" style="color:#0077b5">Service Non Resident</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-3">
+              <h2>Business Hours </h2>
+              <ul class="list-foot padd-inft">
+                <li style="color:#0077b5">
+                  <span >
+                    Mon - Sat :
+                  </span>
+                  11 am - 7.00 pm
+                </li>
+                <li style="color:#0077b5">
+                  <span>
+                    Sun :
+                  </span>
+                  Close
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-3">
+              <h2>Connect With Us </h2>
+              <ul class="call-ad">
+                <a href="https://goo.gl/maps/zjrVTMkb7jaMALDu8" target="_blank">
+
+                <li>
+                  <i class="fa fa-map-marker" style="color:#0077b5;line-height:25px"> "Akshaydeep",146 Sathe Marg Near Mehadia Square,Dhantoli,<br>Nagpur,440012 </i>
+                </li>
+                </a>
+                <li>
+                  <i class="fa fa-phone" style="color:#0077b5"> 9881164000</i>
+                 
+                </li>
+                 <a href="{% url 'contact'%}"> <li>
+                   <i class="fa fa-envelope-o" style="color:#0077b5"> admin@virtualcaoffice.com</i>
+                 
+                </li></a>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copy-right" style="background-color:#0077b5;">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>
+                <b>Copyright © VirtualCA. All Rights Reserved.</b>
+              </p>
+            </div>
+            <div class="col-sm-6">
+              <p style="padding-left:90px">
+                <b>Designed &amp; Developed by:</b>
+                <a target="_blank" href="#">
+                  <b>admin@virtualcaoffice.com</b>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+<button class="open-button" onclick="openForm()">
+<div style="padding-left:150px">
+<i class='fas fa-comments' style='font-size:48px;color:#17a3eb; text-align:left'></i>
+</div>
+    </button>
+
+<div class="chat-popup" id="myForm">
+  <form method="POST" class="form-container" style="height:500px">
+  {%csrf_token%}
+    <label for="msg"><b>Message</b></label>
+
+    <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" required>
+      <br>
+    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+      <button type="submit" class="btn"><b style="color:white">Send</b></button>
+    <button type="button" class="btn cancel" onclick="closeForm()"><b style="color:white">Close</b></button>
+  </form>
+</div>
+
+{% comment %} slide letters  {% endcomment %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script>
+//Wrap every letter in a span-->
+    var textWrapper = document.querySelector('.ml2');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({loop: true})
+      .add({
+        targets: '.ml2 .letter',
+        scale: [4,1],
+        opacity: [0,1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 950,
+        delay: (el, i) => 70*i
+      }).add({
+        targets: '.ml2',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+    </script>
+<script>// Wrap every letter in a span
+    var textWrapper = document.querySelector('.ml13');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({ loop: true })
+        .add({
+            targets: '.ml13 .letter',
+            translateY: [-100, 0],
+            easing: "easeOutExpo",
+            duration: 1400,
+            delay: (el, i) => 30 * i
+        }).add({
+            targets: '.ml13',
+            opacity: 0,
+            duration: 2000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+</script>
+<script>// Wrap every letter in a span
+    var textWrapper = document.querySelector('.ml14');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({ loop: true })
+        .add({
+            targets: '.ml14 .letter',
+            translateY: [-100, 0],
+            easing: "easeOutExpo",
+            duration: 1400,
+            delay: (el, i) => 30 * i
+        }).add({
+            targets: '.ml14',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+</script>
+<script>// Wrap every letter in a span
+    var textWrapper = document.querySelector('.ml15');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({ loop: true })
+        .add({
+            targets: '.ml15 .letter',
+            translateY: [-100, 0],
+            easing: "easeOutExpo",
+            duration: 1400,
+            delay: (el, i) => 30 * i
+        }).add({
+            targets: '.ml15',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+</script>
+<script>// Wrap every letter in a span
+    var textWrapper = document.querySelector('.ml16');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({ loop: true })
+        .add({
+            targets: '.ml16 .letter',
+            translateY: [-100, 0],
+            easing: "easeOutExpo",
+            duration: 1400,
+            delay: (el, i) => 30 * i
+        }).add({
+            targets: '.ml16',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+</script>
+<script>// Wrap every letter in a span
+    var textWrapper = document.querySelector('.ml17');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({ loop: true })
+        .add({
+            targets: '.ml17 .letter',
+            translateY: [-100, 0],
+            easing: "easeOutExpo",
+            duration: 1400,
+            delay: (el, i) => 30 * i
+        }).add({
+            targets: '.ml17',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+</script>
+<script>// Wrap every letter in a span
+    var textWrapper = document.querySelector('.ml18');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({ loop: true })
+        .add({
+            targets: '.ml18 .letter',
+            translateY: [-100, 0],
+            easing: "easeOutExpo",
+            duration: 1400,
+            delay: (el, i) => 30 * i
+        }).add({
+            targets: '.ml18',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+</script>
+
+ 
+{% comment %} end slide letters  {% endcomment %}
+
+
+<script>
+      $(document).ready(function() {
+        $(".navbar a.dropdown-toggle").on("click", function(n) {
+          var t = $(this),
+            e = $(this).offsetParent(".dropdown-menu");
+          return $(this).parent("li").toggleClass("open"), e.parent().hasClass("nav") || t.next().css({
+            top: t[0].offsetTop,
+            left: e.outerWidth() - 4
+          }), $(".nav li.open").not($(this).parents("li")).removeClass("open"), !1
+        })
+      })
+    </script>
+    <script language="javascript">
+      $(function() {
+        $('#myNavbar li a[href^="' + location.pathname.split("")[1] + '"]').addClass("active")
+      })
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // make it as accordion for smaller screens
+        if (window.innerWidth < 992) {
+          // close all inner dropdowns when parent is closed
+          document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown) {
+            everydropdown.addEventListener('hidden.bs.dropdown', function() {
+              // after dropdown is hidden, then find all submenus
+              this.querySelectorAll('.submenu').forEach(function(everysubmenu) {
+                // hide every submenu as well
+                everysubmenu.style.display = 'none';
+              });
+            })
+          });
+          document.querySelectorAll('.dropdown-menu a').forEach(function(element) {
+            element.addEventListener('click', function(e) {
+              let nextEl = this.nextElementSibling;
+              if (nextEl && nextEl.classList.contains('submenu')) {
+                // prevent opening link if link needs to open dropdown
+                e.preventDefault();
+                if (nextEl.style.display == 'block') {
+                  nextEl.style.display = 'none';
+                } else {
+                  nextEl.style.display = 'block';
+                }
+              }
+            });
+          })
+        }
+        // end if innerWidth
+      });
+    </script>
+    <script type="text/javascript">
+      $('[data-toggle="counterUp"]').counterUp({
+        delay: 15,
+        time: 1500
+      })
+    </script>
+
+
+
+<!--scrolling-up to top icon-->
+    <script>
+      //Get the button
+      let mybutton = document.getElementById("btn-back-to-top");
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      // When the user clicks on the button, scroll to the top of the document
+      mybutton.addEventListener("click", backToTop);
+
+      function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    
+
+ 
+<!--for slide-->
+
+
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<!--for end slide-->
+ 
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+  </body>
+</html>

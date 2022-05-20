@@ -1,0 +1,60 @@
+{% extends 'CA_app/BASECODE/CA_app_base.html' %}
+
+{% block content %}
+{% load static %}
+
+ <section style="padding:50px">
+     <div class="text-center">
+        <h2 class="hover-underline-animation"><b style="color:black">Payroll</b> <span style="color:#0077b5"><b>Services</b></span></h2>
+    </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 mt-5">
+        <img src="{% static 'CA_app/images/pa.png'%}" height="400px" width="100%">
+      </div>
+      <div class="col-sm-6 mt-5">
+
+        <br>
+        <ul>
+          <li>
+            <p style="font-size:16px">Preparation of Monthly Salary Sheet.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Deductions as per applicable laws like Income Tax, Provident Fund, Professional Tax etc.</p>
+          </li>
+          <li>
+            <P style="font-size:16px">Computation and deposit of TDS, ESI, PF etc.</p>
+          </li>
+          <li>
+            <p style="font-size:16px"> Disbursement/ Online Payment of Salary.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Pay slip by password protected e-mail.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Reimbursement of telephone, medical bills etc.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Issue of Form 16 to employees.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Periodic Reconciliation of payments/statutory deductions etc. with books of accounts.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Administration of gratuity, superannuation, pension schemes etc.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-12 mt-5">
+      {% include 'CA_app/SERVICES/Request_form/request_form.html' %}
+      {% block request_content %}
+
+      {% endblock request_content %}
+    </div>
+  </div>
+  </div>
+</section>
+
+
+
+{% endblock content %}

@@ -1,0 +1,62 @@
+{% extends 'CA_app/BASECODE/CA_app_base.html' %}
+
+{% block content %}
+{% load static %}
+
+<section style="padding:50px">
+     <div class="text-center">
+        <h2 class="hover-underline-animation"><b style="color:black">TDS</b> <span style="color:#0077b5"><b>Services</b></span></h2>
+    </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-6">
+        <img src="{% static 'CA_app/images/td.png'%}" height="300px" width="100%">
+      </div>
+      <div class="col-sm-6">
+
+        <br>
+        <ul>
+          <li>
+            <p style="font-size:16px">Advice on all matters related to compliance of TDS/TCS provisions.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Obtaining Tax Deduction Account Number (TAN).</p>
+          </li>
+          <li>
+            <P style="font-size:16px">Periodic review of TDS/ Withholding Tax compliance.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Computation of monthly TDS.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Monthly reconciliation of TDS due and deposited.</p>
+          </li>
+            <li>
+            <p style="font-size:16px">Monthly deposit of TDS electronically/manually.</p>
+          </li>
+            <li>
+            <p style="font-size:16px">Issue of monthly/annual TDS certificates.</p>
+          </li>
+            <li>
+            <p style="font-size:16px">Filing of quarterly E-TDS/Manual Returns.</p>
+          </li>
+            <li>
+            <p style="font-size:16px">Filing of Correction Statements.</p>
+          </li>
+            <li>
+            <p style="font-size:16px">TDS assessment.</p>
+          </li>
+        </ul>
+      </div>
+    <div class="col-sm-12 mt-5">
+     {% include 'CA_app/SERVICES/Request_form/request_form.html' %}
+      {% block request_content %}
+
+      {% endblock request_content %}
+  </div>
+  </div>
+  </div>
+</section>
+
+
+{% endblock content %}

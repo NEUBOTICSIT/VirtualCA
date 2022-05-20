@@ -1,0 +1,145 @@
+{% extends 'GST_app/BASECODE/gst_base.html' %} {% block gst_content %} {% load static %} <div class="text-center">
+  <h2>
+    <b>Cancellation GST Application Form | Taxpayer</b>
+  </h2>
+
+</div>
+<div>
+  <hr style="height:2px;border-width:0;color:gray;background-color:#000">
+</div>
+
+<div class="container  shadow-lg p-3 mb-5 bg-body rounded">
+            <form method="POST">{%csrf_token%}
+             <div class="text-center">
+              <h2 style="background-color :#0077b5;"><b style="color:white; font size:20px;">GST Cancellation</b></h2>
+             </div>
+
+                <div class="row mt-3">
+
+      <div class="col-sm-4">
+                       <label for="check1"> <b>Select Type of Business For GSTIN <b style="color:red">*</b></b></label>
+          <select class="form-select" id="check1" required>
+              <option value="">Proprietary</option>
+              <option value="">Hindu Undivided Family</option>
+              <option value="">Partnership</option>
+              <option value="">Co-Operative</option>
+              <option value="">Society</option>
+              <option value="">Public Limited Company</option>
+              <option value="">Private Limited Company</option>
+              <option value="">Partnership</option>
+              <option value="">Private Limited Company</option>
+              <option value="">Others</option>
+
+          </select>
+  </div>
+                </div>
+
+                    <div class="row mt-3">
+                         <h5 style="color:#00f">
+            <b>Business Details</b>
+          </h5>
+           <div class="col-sm-3">
+            <label for="Name3"><h6 style="color:black;"><b>Trade Name of Business<b style="color:red;">*</b></b></h6></label>
+            <input type="text" class="form-control" id="Name3" name="Firstname"  autocomplete="false" required>
+
+            </div>
+           <div class="col-sm-3">
+            <label for="Name3"><h6 style="color:black;"><b>GSTIN (Optional)<b style="color:red;">*</b></b></h6></label>
+            <input type="text" class="form-control" id="Name3" name="Firstname"  autocomplete="false" required>
+
+            </div>
+
+                    </div>
+
+                <div class="row mt-3">
+       <h5 style="color:blue;"><b>General Details </b></h5>
+
+        <div class="col-sm-3">
+            <label for="Name3"><h6 style="color:black;"><b>Full Name<b style="color:red;">*</b></b></h6></label>
+            <input type="email" class="form-control" id="Name3" name="Firstname"  autocomplete="false" required>
+
+            </div>
+
+                <div class="col-sm-3">
+            <label for="Name3"><h6 style="color:black;"><b>E-mail ID<b style="color:red;">*</b></b></h6></label>
+            <input type="email" class="form-control" id="Name3" name="Firstname"  autocomplete="false" required>
+
+            </div>
+
+           <div class="col-sm-3">
+                    <label for="Name2" style="padding-bottom:10px">
+                      <b> Mobile Number/मोबाइल नंबर </b>
+
+                      <b style="color:red;">*</b>
+                    </label>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">+91</span>
+                    <input type="tel" class="form-control"  pattern="[0-9]{10}" name="mobile" id="Name2" placeholder="Name as per Aadhaar" autocomplete="false"  required>
+                    </div>
+            </div>
+
+           <div class="col-sm-3">
+            <label for="Name3"><h6 style="color:black;"><b>GST(optional)<b style="color:red;">*</b></b></h6></label>
+            <input type="email" class="form-control" id="Name3" name="Firstname"  autocomplete="false">
+
+            </div>
+  </div>
+
+ <div>
+          <hr>
+          <br>I, the Applicant, in the capacity of Himself/Herself do hereby declare that what is stated above is true to the best of my knowledge of my information and belief.
+        </div>
+        <div>
+          <br>
+          <input type="checkbox" name="prop_declaration_box" value="1" id="tc">
+          <a href="https://www.meraprofit.com/terms-and-conditions" target="_blank" class="declaration_condition_link">
+            <b>
+              <u>I Agree ALL Terms And Conditions</u>
+            </b>
+          </a>
+          <div class="text-center">
+            <br>
+            <button class="btn btn-primary" type="submit">Continue</button>
+          </div>
+          <hr style="height:2px;border-width:0;color:gray;background-color:#000">
+        </div>
+
+
+            </form>
+</div>
+<section>
+<div class="container">
+    <div class="row text-center ">
+      <div class="col-sm-4">
+        <img class=" zoom" src="{% static 'GST_app/images/security-lock.png'%}" height="50px" width="50px">
+        <h5 style="color:#02475E;">
+         <b> 100% Secure Payments</b>
+        </h5>
+        <p style="font-size:15px">
+          Moving Your Card details to a much more secured place
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <img class=" zoom" src="{% static 'GST_app/images/thumb1.jpg'%}" height="50px" width="50px">
+        <h5 style="color:#02475E;">
+          <b>Trust Pay</b>
+         </h5>
+        <p style="font-size:15px">
+          100% Secure payments. SSL Protection
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <img class=" zoom" src="{% static 'GST_app/images/support-icon1.png'%}" height="50px" width="50px">
+
+        <h5 style="color:#02475E;">
+          <b>Support</b>
+         </h5>
+        <p style="font-size:15px">
+          We're here to help.Have a query & need help? Click here..
+        </p>
+      </div>
+    </div>
+  </div>
+    </section>
+
+{% endblock gst_content %}

@@ -1,0 +1,107 @@
+<!--<html>-->
+<!--<head>-->
+<!--<title>Limit Selections</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<input type="radio" name="first" value="1" onclick="choice(this)">A-->
+<!--<input type="radio" name="first" value="2" onclick="choice(this)">B-->
+<!--<input type="radio" name="first" value="3" onclick="choice(this)">C-->
+<!--<br>-->
+
+<!--<select id='second'>-->
+<!--</select>-->
+<!--<script type="text/javascript">-->
+<!--// From: http://www.webdeveloper.com/forum/newreply.php?do=postreply&t=163152-->
+
+<!--function choice(t){-->
+<!--	var a = [1,2,3];-->
+<!--	var b = [4,5,6,7];-->
+<!--	var c = [8,9,10];-->
+<!--	s = document.getElementById('second');-->
+<!--	var sl = s.options.length;-->
+<!--	for(var i = sl-1; i >= 0 ; i&#45;&#45;) { s.options[i] = null; }-->
+<!--	if(t.value != 0){-->
+<!--		var z;-->
+<!--		switch (t.value) {-->
+<!--			case '1' : z = a; break;-->
+<!--			case '2' : z = b; break;-->
+<!--			case '3' : z = c; break;-->
+<!--			default : alert('Invalid entry'); break;-->
+<!--		}-->
+<!--		var l = z.length;-->
+<!--		for(i = 0; i < l; i++ ) { s.options[i] = new Option(z[i],z[i],false,false); }-->
+<!--	}-->
+<!--}-->
+
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<html>
+<head>
+<script type="text/javascript">
+function choice(t)	{
+	//prices for one week turnaround
+	var a = ['Item One:10','Item Two:20','Item Three:30'];
+	//prices for three days turnaround
+	var b = ['Item One:15','Item Two:25','Item Three:35'];
+	// prices for same day turnaround
+	var c = ['Item One:20','Item Two:30','Item Three:40'];
+
+s = document.getElementById('items');
+var sl = s.options.length;
+for(var i = sl-1; i >= 0 ; i--) { s.options[i] = null; }
+if(t.value != 0){
+	var z;
+	switch (t.value) {
+		case '1' : z = a; break;
+		case '2' : z = b; break;
+		case '3' : z = c; break;
+		default : alert('Invalid entry'); break;
+	}
+	var l = z.length;
+	alert(z);
+	for(i = 0; i < l; i++ ) {
+	  tmp = z[i].split(':');
+	  s.options[i] = new Option(tmp[0],tmp[1],false,false);
+	}
+}
+}
+
+function computePrice(form) {
+
+var num_items = 0;
+var total_cost = 0;
+// set number of items
+if (document.myform.num_items.value!="" && !isNaN(document.myform.num_items.value) )
+{
+	num_items = parseInt(document.myform.num_items.value);
+}
+// set item
+var items = parseInt(document.myform.items.value );
+// calculate total cost
+var total_cost = items * num_items;
+// display total cost
+document.getElementById('total_cost').innerHTML = "Total Cost is: $" + total_cost;
+}
+</script>
+</head>
+
+<body>
+	<form id="myform" name="myform">
+		<!-- my items -->
+    	<select id="items" onChange="computePrice(this)">
+        	<option value="10">Item One</option>
+            <option value="20">Item Two</option>
+            <option value="30">Item Three</option>
+        </select><br>
+        <input type="text" value="0" id="num_items" onkeyup="computePrice(this)"><br><br>
+		<!-- turnaround time -->
+        <input type="radio" name="turnaround" value="1" checked="checked" onClick="choice(this);computePrice(this);">Deliver in one week
+        <input type="radio" name="turnaround" value="2" onClick="choice(this);computePrice(this);">Deliver in three days
+        <input type="radio" name="turnaround" value="3" onClick="choice(this);computePrice();">Deliver in one day!<br><br>
+    </form>
+	<div id="total_cost">Total Cost: $0</div>
+</body>
+</html>

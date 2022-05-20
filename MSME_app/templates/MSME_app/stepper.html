@@ -1,0 +1,1301 @@
+<!DOCTYPE html>{% load static %}
+<html>
+<head>
+<title>Multistep Registration Form- Demo Preview</title>
+<meta content="noindex, nofollow" name="robots">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script src="multi_step_form.js"></script>
+<style>
+    @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+    /* Above line is to import google font style */
+    .content{
+    width:100%;
+    margin:20px auto;
+    }
+    .main{
+    float:left;
+    width: 100%;
+    margin-top:80px;
+    }
+    #progressbar{
+    margin:0;
+    padding-left:350px;
+    font-size:20px;
+    }
+    .active{
+    color:green;
+    }
+    fieldset{
+    display:none;
+    width: 1200px;
+    padding:20px;
+    margin-top:50px;
+    margin-left: 85px;
+    border-radius:5px;
+    box-shadow: 3px 3px 25px 1px gray;
+    }
+    #first{
+    display:block;
+    width: 1200px;
+    padding:20px;
+    margin-top:50px;
+    border-radius:5px;
+    margin-left: 85px;
+    box-shadow: 3px 3px 25px 1px gray;
+    }
+    input[type=text],
+    input[type=password],
+    select{
+    width:100%;
+    margin:10px 0;
+    height:40px;
+    padding:5px;
+
+    border-radius: 4px;
+    }
+    textarea{
+    width:100%;
+    margin:10px 0;
+    height:70px;
+    padding:5px;
+    border: 3px solid rgb(73, 179, 250);
+    border-radius: 4px;
+    }
+    input[type=submit],
+    input[type=button]{
+    width: 120px;
+    margin:15px 25px;
+    padding: 5px;
+    height: 40px;
+    background-color: rgb(73, 179, 250);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: 'Droid Serif', serif;
+    }
+    h2,p{
+    text-align:center;
+    font-family: 'Droid Serif', serif;
+    }
+    li{
+    margin-right:52px;
+    display:inline;
+    color:#c1c5cc;
+    font-family: 'Droid Serif', serif;
+    }
+
+
+
+
+
+
+
+
+
+/* Include the padding and border in an element's total width and height */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove margins and padding from the list */
+ul.multiul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+ul.multiul li {
+  cursor: pointer;
+  position: relative;
+  width:100%;
+  padding: 12px 8px 40px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul.multiul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul.multiul li:hover {
+  background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul.multiul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+ul.multiul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+
+
+
+/* Style the header */
+.header {
+  background-color: #f44336;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the input */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}
+  </style>
+
+
+
+
+    
+</head>
+<body>
+<div class="content">
+    {% if messages %}                      
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Message:</strong> {{ message }}.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+   {% endfor %}
+   {% endif %}
+<!-- Multistep Form -->
+<div class="main">
+<form action="#" class="regform" method="POST">{% csrf_token %}
+<!-- Progress Bar -->
+<ul id="progressbar">
+<li class="active">Basic Details</li>
+<li>Enterprise Details</li>
+<li>Other Details</li>
+<li>Submit</li>
+</ul>
+<!-- Fieldsets -->
+<fieldset id="first">
+<div class="text-center">
+  <h2 style="background-color :#0077b5; color:white; font size:15px">
+    MSME Registration
+  </h2>
+</div>
+<div class="row">
+  {% comment %} <div class="col-sm-6">
+    <b>Have you filed the ITR for FY (2019-20) ?</b>
+
+
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="itryes" id="itryes" disabled='disabled'>
+    <label class="form-check-label" for="itryes">Yes</label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="itrno" id="itrno" disabled='disabled'>
+    <label class="form-check-label" for="itrno">No</label>
+  </div>
+
+</div> {% endcomment %}
+
+  <br>
+   <div class="col-sm-6 mt-5">
+
+    <b>Do you have GSTIN ?</b>
+     <br>
+     <br>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="GSTINyes" id="GSTINyes">
+      <label class="form-check-label" for="GSTINyes">Yes</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="GSTINno" id="GSTINno">
+      <label class="form-check-label" for="GSTINno">No</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="GSTINex" id="GSTINex">
+      <label class="form-check-label" for="GSTINex">Exempted / छूट प्राप्त
+    </label>
+    </div>
+  </div>
+</div>
+<br>
+<div style="padding-right:500px">
+
+<p> <b>Note: </b>  <b style="color:green">In case of option (No) in respect of GSTIN, same would be verified from GSTN.</b></p>
+
+</div>
+
+
+
+
+<br>
+<div class="row">
+  <div class="col-sm-4">
+    <label for="validationCustom01" style="padding-bottom:10px">
+      <b >Name of Entrepreneur as per PAN <b style="color:red;">*</b></b>
+    </label><br>
+    <input type="text" class="form-control" name="NameofEntrepreneur" id="NameofEntrepreneur"  placeholder="Your Name" autocomplete="False"  minlength="5" maxlength="20" size="25" required>
+  </div>
+</div><br>
+ <div class="row">
+  <div class="col-sm-4">
+    <label for="Name2" style="padding-bottom:10px">
+      <b> Mobile Number/मोबाइल नंबर </b>
+
+      <b style="color:red;">*</b>
+    </label>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">+91</span>
+    <input type="tel" class="form-control"  pattern="[0-9]{10}" name="mobile" id="mobile"  autocomplete="false"  required>
+    </div>
+    </div>
+  <div class="col-sm-4">
+    <label for="Name3" style="padding-bottom:10px">
+       <b> Email / ईमेल</b>
+      <b style="color:red;">*</b>
+    </label>
+    <input type="email" class="form-control" name="email" id="email" autocomplete="false" required>
+  </div>
+</div>
+
+<br>
+<br>
+<div class="row">
+  <br>
+  <div class="col-sm-4">
+     <b>Social Category / सामाजिक वर्ग</b>
+
+    <div class="form-check">
+     <label class="form-check-label" for="general">General / सामान्य</label>
+      <input class="form-check-input" type="radio" name="social_cat" id="general">
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="social_cat" id="SC">
+      <label class="form-check-label" for="SC">SC / अनुसूचित जाति</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="social_cat" id="ST">
+      <label class="form-check-label" for="ST">ST / अनुसूचित जनजाति</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="social_cat" id="OBC">
+      <label class="form-check-label" for="OBC">OBC / अन्य पिछड़ा वर्ग</label>
+    </div>
+  </div>
+
+
+  <div class="col-sm-4">
+     <b>Gender / लिंग</b>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="gender_option" id="male">
+      <label class="form-check-label" for="male">Male / पुरूष</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="gender_option" id="female">
+      <label class="form-check-label" for="female">Female / स्त्री</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="gender_option" id="others">
+      <label class="form-check-label" for="others">Others / अन्य</label>
+    </div>
+  </div>
+  <div class="col-sm-4">
+     <b>Specially Abled(DIVYANG) / दिव्यांग</b>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="SpeciallyAbled_option" id="Abledyes">
+      <label class="form-check-label" for="Abledyes">Yes / हाँ</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="SpeciallyAbled_option" id="Abledno">
+      <label class="form-check-label" for="Abledno">No / नहीं</label>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<input class="next_btn" name="next" type="button" value="Next">
+</fieldset>
+
+
+{% comment %} step2 ==========================================={% endcomment %}
+
+
+<fieldset>
+
+
+<div class="text-center">
+  <h2 style="background-color :#22a2d0;">
+    <b style="color:white; font size:20px;">MSME Registration</b>
+  </h2>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-8">
+    <label for="enterprise" style="padding-bottom:10px">
+      <b> Name of Enterprise / उद्यम का नाम <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="text" class="form-control" id="enterprise" name="NameofEnterprise" placeholder="Name of Enterprise" autocomplete="false" minlength="5" maxlength="20" size="25" required>
+  </div>
+</div>
+<br>
+
+ <div class="row">
+  <br>
+       <h6> Official Address of Enterprise / कार्यालय का पता :</h6>
+  <div class="col-sm-4">
+
+    <br>
+
+    <label for="door1" style="padding-bottom:10px">
+      <b>Flat/ Door/ Block No. / फ्लैट / द्वार / ब्लॉक सं <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="text" class="form-control" name="door1" id="door1" autocomplete="false" required>
+  </div>
+  <div class="col-sm-4">
+    <br>
+    <label for="building1" style="padding-bottom:10px">
+      <b>Name of Premises/Building/परिसर/भवन  <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="text" class="form-control" name="building1" id="building1" autocomplete="false" required>
+  </div>
+  <div class="col-sm-4"><br>
+    <label for="village1" style="padding-bottom:10px">
+      <b>Village/Town / ग्राम/शहर <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="text" class="form-control" name="village1" id="village1" autocomplete="false" required>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4"><br>
+    <label for="block1" style="padding-bottom:10px">
+      <b>Block / खंड <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="text" class="form-control" name="block1" id="block1" autocomplete="false" required>
+  </div>
+  <div class="col-sm-4"><br>
+    <label for="road1" style="padding-bottom:10px">
+      <b>Road/ Street/ Lane/सड़क/ मार्ग / गली <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="text" class="form-control" name="road1" id="road1" autocomplete="false" required>
+  </div>
+  <div class="col-sm-4"><br>
+    <label for="city1" style="padding-bottom:10px">
+      <b>City/नगर <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="text" class="form-control" name="city1" id="city1" autocomplete="false" required>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4"><br>
+    <label for="pin" style="padding-bottom:10px">
+      <b>Pin/पिन <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="number" class="form-control" name="pin" id="pin" autocomplete="false">
+  </div>
+  <div class="form-group col-sm-4"><br>
+    <h5>State/राज्य <b style="color:red">*</b>
+    </h5>
+    <select class="form-select" id="inputState2" name="State" aria-label="Default select example">
+      <option value="SelectState">Select State</option>
+      <option value="Andra Pradesh">Andra Pradesh</option>
+      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+      <option value="Assam">Assam</option>
+      <option value="Bihar">Bihar</option>
+      <option value="Chhattisgarh">Chhattisgarh</option>
+      <option value="Goa">Goa</option>
+      <option value="Gujarat">Gujarat</option>
+      <option value="Haryana">Haryana</option>
+      <option value="Himachal Pradesh">Himachal Pradesh</option>
+      <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+      <option value="Jharkhand">Jharkhand</option>
+      <option value="Karnataka">Karnataka</option>
+      <option value="Kerala">Kerala</option>
+      <option value="Madya Pradesh">Madya Pradesh</option>
+      <option value="Maharashtra">Maharashtra</option>
+      <option value="Manipur">Manipur</option>
+      <option value="Meghalaya">Meghalaya</option>
+      <option value="Mizoram">Mizoram</option>
+      <option value="Nagaland">Nagaland</option>
+      <option value="Orissa">Orissa</option>
+      <option value="Punjab">Punjab</option>
+      <option value="Rajasthan">Rajasthan</option>
+      <option value="Sikkim">Sikkim</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="Telangana">Telangana</option>
+      <option value="Tripura">Tripura</option>
+      <option value="Uttaranchal">Uttaranchal</option>
+      <option value="Uttar Pradesh">Uttar Pradesh</option>
+      <option value="West Bengal">West Bengal</option>
+      <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
+      <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+      <option value="Chandigarh">Chandigarh</option>
+      <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+      <option value="Daman and Diu">Daman and Diu</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Lakshadeep">Lakshadeep</option>
+      <option value="Pondicherry">Pondicherry</option>
+    </select>
+  </div>
+  <div class="col-sm-4"><br>
+    <label for="inputDistrict">
+      <b>District / जिला <b style="color:red">*</b>
+      </b>
+    </label>
+    <select class="form-select" name="District" id="inputDistrict2">
+      <option value="">-- select one -- </option>
+    </select>
+  </div>
+</div>
+
+<br>
+    <div class="row">
+                  <div class="col-sm-8">
+                    <label for="plant" style="padding-bottom:10px">
+                      <b>Plant/Unit Name / इकाई का नाम <b style="color:red">*</b>
+                      </b>
+                    </label>
+                     <input type="text" class="form-control"  id="myInput" name="Plant_UnitName" placeholder="Unit Name" autocomplete="false" required>
+                    <br>
+
+                       </div>
+                  <div class="col-sm-4">
+                    <div class="text-center">
+             <br>
+<!--              <span onclick="newElement(); insertValue();"  class="addBtn">Add</span>-->
+
+
+ <button onclick="insertValue(); newElement(); ">Add</button>
+</div>
+          </div>
+
+
+<ul  class="multiul" id="myUL">
+
+</ul>
+
+
+
+
+
+
+<br>
+
+
+
+<div class="row">
+  <br>
+  <div>
+
+    <b> Location of Plant(s)/Unit(s) :</b>
+
+    <br>
+    <label style="padding-bottom:10px">
+      <b>Unit Name / इकाई का नाम</b></label><br>
+    <select class="form-select" id="select" name="Location_of_Plant_option" aria-label="Default select example">
+    
+     <option> </option>
+      
+    </select>
+  </div>
+</div><br>
+
+<div class="row">
+  <br>
+  <div class="col-sm-4">
+    <br>
+    <label for="Door2" style="padding-bottom:10px">
+      <b>Flat/ Door/ Block No. / फ्लैट / द्वार / ब्लॉक सं <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="text" class="form-control" name="'Door2" id="Door2" autocomplete="false" required>
+  </div>
+  <div class="col-sm-4">
+    <br>
+    <label for="building2" style="padding-bottom:10px">
+      <b>Name of Premises/Building/परिसर/भवन  <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="text" class="form-control" name="building2" id="building2" autocomplete="false" required>
+  </div>
+  <div class="col-sm-4"><br>
+    <label for="village2" style="padding-bottom:10px">
+      <b>Village/Town / ग्राम/शहर <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="text" class="form-control" name="village2" id="village2" autocomplete="false" required>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4"><br>
+    <label for="block2" style="padding-bottom:10px">
+      <b>Block / खंड <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="text" class="form-control" name="block2" id="block2" autocomplete="false" required>
+  </div>
+  <div class="col-sm-4"><br>
+    <label for="road1" style="padding-bottom:10px">
+      <b>Road/ Street/ Lane/सड़क/ मार्ग / गली <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="text" class="form-control" name="road1" id="road1" autocomplete="false" required>
+  </div>
+  <div class="col-sm-4"><br>
+    <label for="city1" style="padding-bottom:10px">
+      <b>City/नगर <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="text" class="form-control" name="city1" id="city1" autocomplete="false" required>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4"><br>
+    <label for="pin2" style="padding-bottom:10px">
+      <b>Pin/पिन <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="number" class="form-control" name="pin2" id="pin2" autocomplete="false">
+  </div>
+  <div class="form-group col-sm-4"><br>
+    <h5>State/राज्य <b style="color:red">*</b>
+    </h5>
+    <select class="form-select" id="inputState3" name="State" aria-label="Default select example">
+      <option value="SelectState">Select State</option>
+      <option value="Andra Pradesh">Andra Pradesh</option>
+      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+      <option value="Assam">Assam</option>
+      <option value="Bihar">Bihar</option>
+      <option value="Chhattisgarh">Chhattisgarh</option>
+      <option value="Goa">Goa</option>
+      <option value="Gujarat">Gujarat</option>
+      <option value="Haryana">Haryana</option>
+      <option value="Himachal Pradesh">Himachal Pradesh</option>
+      <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+      <option value="Jharkhand">Jharkhand</option>
+      <option value="Karnataka">Karnataka</option>
+      <option value="Kerala">Kerala</option>
+      <option value="Madya Pradesh">Madya Pradesh</option>
+      <option value="Maharashtra">Maharashtra</option>
+      <option value="Manipur">Manipur</option>
+      <option value="Meghalaya">Meghalaya</option>
+      <option value="Mizoram">Mizoram</option>
+      <option value="Nagaland">Nagaland</option>
+      <option value="Orissa">Orissa</option>
+      <option value="Punjab">Punjab</option>
+      <option value="Rajasthan">Rajasthan</option>
+      <option value="Sikkim">Sikkim</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="Telangana">Telangana</option>
+      <option value="Tripura">Tripura</option>
+      <option value="Uttaranchal">Uttaranchal</option>
+      <option value="Uttar Pradesh">Uttar Pradesh</option>
+      <option value="West Bengal">West Bengal</option>
+      <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
+      <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+      <option value="Chandigarh">Chandigarh</option>
+      <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+      <option value="Daman and Diu">Daman and Diu</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Lakshadeep">Lakshadeep</option>
+      <option value="Pondicherry">Pondicherry</option>
+    </select>
+  </div>
+  <div class="col-sm-4"><br>
+    <label for="inputDistrict">
+      <b>District / जिला <b style="color:red">*</b>
+      </b>
+    </label>
+    <select class="form-select" name="District" id="inputDistrict3">
+      <option value="">-- select one -- </option>
+    </select>
+  </div>
+</div>
+<div class="text-center">
+  <br>
+  <button class="btn btn-primary" type="submit">ADD Plant </button>
+  <br>
+</div>
+<br>
+
+<!--                <a href="{% url 'pay'%}"><button class="btn btn-success " type="submit">Pay Secure & Continue</button></a>-->
+<div class="text-center">
+<a href="{% url 'pay'%}">
+
+  <h4 style="color:green;">Pay Secure & Continue</h4>
+</a>
+</div>
+</div>
+<input class="pre_btn" name="previous" type="button" value="Previous">
+<input class="next_btn" name="next" type="button" value="Next">
+</fieldset>
+
+
+
+
+{% comment %} step3 ==========================================={% endcomment %}
+<fieldset>
+
+
+
+<div class="text-center">
+  <h2 style="background-color :#22a2d0;">
+    <b style="color:white; font size:20px;">MSME Registration</b>
+  </h2>
+</div>
+<br>
+
+  <div class="row">
+
+  <br>
+
+  <h5>Previous EM-II/UAM Registration Number, If Any / पिछले EM-II/UAM पंजीकरण संख्या, यदि कोई है :</h5>
+  <div class="form-check"><br>
+    <input class="form-check-input" type="radio" id="URM" name="Previous_EMII_option">
+    <label class="form-check-label" for="URM">N/A</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="Previous_EMII_option" id="Whether_production">
+    <label class="form-check-label" for="em_ii">EM-II</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="Previous_EMII_option" id="Pre_uam">
+    <label class="form-check-label" for="Pre_uam">Previous UAM</label>
+  </div>
+</div><br>
+<div class="row">
+  <br>
+  <h5> Status of Enterprise :</h5>
+  <div class="col-sm-4"><br>
+    <label for="date">
+      <b>Date of Incorporation/registration <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="date" class="form-control" id="dateIncorporation" name="dateIncorporation" autocomplete="false">
+  </div>
+  <div class="col-sm-4"><br>
+    <h6>
+      <b>Whether production/business commenced</b>
+      <b style="color:red">*</b>
+    </h6>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="activities_option" id="productionyes">
+      <label class="form-check-label" for="production1">YES</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="activities_option" id="productionno">
+      <label class="form-check-label" for="productionyes">NO</label>
+    </div>
+  </div>
+  <div class="col-sm-4"><br>
+    <label for="Date_of_Incorporation">
+      <b>Date of commencement of Business<b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="date" class="form-control" id="Date_of_Incorporation" name="Date_of_Incorporation" autocomplete="false">
+  </div>
+
+</div><br>
+<div class="row">
+  <h5>Bank Details / बैंक विवरण :</h5>
+  <div class="col-sm-4"><br>
+    <label for="bankname">
+      <b>Bank Name / बैंक विवरण <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="text" class="form-control" id="bankname" name="bankname" autocomplete="false">
+  </div>
+  <div class="col-sm-4"><br>
+    <label for="ifsccode">
+      <b>IFSC Code / आईएफएस कोड <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="text" class="form-control" id="ifsccode" name="ifsccode" placeholder="example:SBIN0001624" autocomplete="false">
+  </div>
+  <div class="col-sm-4"><br>
+    <label for="account_no" style="padding-bottom:10px">
+      <b>Bank Account Number / बैंक खाता संख्या <b style="color:red">*</b>
+      </b>
+    </label>
+    <input type="text" class="form-control" id="account_no" name="account_no" placeholder="example:3078578578" autocomplete="false">
+  </div>
+</div><br>
+<div class="row mt-3">
+  <h5> Major Activity of Unit / इकाई की प्रमुख गतिविधि :</h5>
+  <div class="form-check"><br>
+    <input class="form-check-input" type="radio" id="Manufacturing_activity" name="Manufacturing_activity">
+    <label class="form-check-label" for="Manufacturing_activity">Manufacturing / विनिर्माण</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="services_activity" id="services_activity">
+    <label class="form-check-label" for="services_activity">Services / सेवा</label>
+  </div>
+</div>
+
+
+
+
+<input class="pre_btn" type="button" value="Previous">
+<input class="next_btn" name="next" type="button" value="Next">
+</fieldset>
+
+
+
+
+
+
+{% comment %} step4 ==========================================={% endcomment %}
+<fieldset>
+  <div class="text-center">
+    <h2 style="background-color :#22a2d0; color:white;" >
+      MSME Registration
+    </h2>
+  </div>
+  <br>
+                  <div class="row">
+                    <h5> National Industrial Classification (NIC) Code for Activities(One or more activities can be added)
+                    <br>Search NIC Code in Lesser Steps (To Avoid 3 Step Selection of NIC Activities) :</h5>
+                    <br><div>
+                      <input type="text" class="form-control" name="Search_NIC_Code" placeholder="Search NIC CODE" id="Search_NIC_Code" autocomplete="false">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <br>
+                    <div class="mt-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" value="1" name="chk" id="Manufacturing">
+                        <label class="form-check-label" for="Manufacturing"><b>Manufacturing / विनिर्माण</b></label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" value="2" name="chk" id="Services">
+                        <label class="form-check-label" for="Services"><b>Services / सेवा</b></label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio"  value="3" name="chk">
+                        <label class="form-check-label" for="Trading "><b>Trading / व्यापारिक</b></label>
+                      </div>
+                    </div>
+                  </div><br>
+
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <label>
+                        <b>NIC 2 Digit Code <b style="color:red">*</b>
+                        </b>
+                      </label>
+                      <select class="form-select" id="2_Digit" name="NIC2_DigitCode_option" aria-label="Default select example">
+                        <option value="Assam">Choose 2 Digit NIC Code</option>
+
+                      </select>
+                    </div>
+                    <div class="col-sm-4">
+                      <label>
+                        <b>NIC 4 Digit Code <b style="color:red">*</b>
+                        </b>
+                      </label>
+                      <select class="form-select" id="4_Digit" name="NIC4_DigitCode_option" aria-label="Default select example">
+                        <option value="Assam">Choose 4 Digit NIC Code</option>
+
+                      </select>
+                    </div>
+                    <div class="col-sm-4">
+                      <label>
+                        <b>NIC 5 Digit Code <b style="color:red">*</b>
+                        </b>
+                      </label>
+                      <select class="form-select" id="5_Digit" name="NIC5_DigitCode_option" aria-label="Default select example">
+                        <option value="Assam">Choose 5 Digit NIC Code</option>
+
+                      </select>
+                    </div>
+                  </div><br>
+                  <div class="text-center">
+
+                    <button class="btn btn-primary" type="submit">ADD More Activity</button>
+                  </div><br>
+
+                  <div class="row"><br>
+                    <h5>Number of persons employed / नियोजित व्यक्तियों की संख्या :</h5>
+                    <div class="col-sm-3"><br>
+
+                      <label for="male_employed">
+                        <b>Male / पुरूष <b style="color:red">*</b>
+                        </b>
+                      </label>
+                      <input type="number" class="form-control prc" id="male_employed" name="Numberof_persons_employed_Male" placeholder="Example:20" value="" autocomplete="false">
+                    </div>
+                    <div class="col-sm-3"><br>
+                      <label for="female_employed">
+                        <b>Female / स्त्री <b style="color:red">*</b>
+                        </b>
+                      </label>
+                      <input type="number" class="form-control prc" id="female_employed" name="Numberof_persons_employed_Female" placeholder="Example:20"  value="" autocomplete="false">
+                    </div>
+                    <div class="col-sm-3"><br>
+                      <label for="others_employed">
+                        <b>Others / अन्य<b style="color:red">*</b>
+                        </b>
+                      </label>
+                      <input type="number" class="form-control prc" id="others_employed" name="Numberof_persons_employed_District" placeholder="Example:20" value="" autocomplete="false">
+                    </div>
+
+
+                    <div class="col-sm-3"><br>
+
+                      <label for="total_employed">
+                        <b>Total / संपूर्ण <b style="color:red">*</b>
+                        </b>
+                      </label>
+                         <input type="number" class="form-control" id="total_employed" name="Numberof_persons_employed_District" placeholder="Example:20" autocomplete="false" value="" disabled="disabled">
+
+                    </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                      <div class="mt-3">
+                        <h5> Investment in Plant and Machinery OR Equipment (in Rs.) :
+                        </h5>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                      <div class="col-sm-4"><br>
+                        <label for="Written_Down_Value"> A) <b>Written Down Value (WDV) as on 31st March of the Previous Year 2019-20 (A) <b style="color:red">*</b>
+                          </b>
+                        </label>
+                        <input type="number" class="form-control" id="Written_Down_Value" onblur="reSum();" name="Written_Down_Value" placeholder="Example: 200000.00" autocomplete="false" style="margin-top:49px">
+                      </div>
+                      <div class="col-sm-4"><br>
+                        <label for="Exclusion_of_cost"> B) <b>Exclusion of cost of Pollution Control, Research & Development and Industrial Safety Devices during 2019-20(To be filled in on self-declaration basis) (B) <b style="color:red">*</b>
+                          </b>
+                        </label>
+                        <input type="number" class="form-control" id="Exclusion_of_cost" onblur="reSum();" name="Exclusion_of_cost" placeholder="Example: 200000.00" autocomplete="false">
+                      </div>
+                      <div class="col-sm-4"><br>
+                        <label for="Net_Investment_Plant">
+                          <b>Net Investment in Plant and Machinery OR Equipment [(A)-(B)] <b style="color:red">*</b>
+                          </b>
+                        </label>
+                        <input type="number" class="form-control"  id="Sum"  onblur="reSum();" name="Net_Investment_Plant" placeholder="0" autocomplete="false" style="margin-top:45px" disabled="disabled">
+                      </div>
+                    </div>
+
+                    <div class="row">
+  
+                      <div class="col-sm-6"><br>
+                        <label for="Total_Turnover_A"> <b>Latest Total Turnover : <b style="color:red">*</b>
+                          </b>
+                        </label>
+                        <input type="text" class="form-control" id="Total_Turnover_A"   oninput="myFunction()"  name="Total_Turnover_A" placeholder="Example: 200000.00" autocomplete="false">
+                      </div>
+                      <div class="col-sm-6"><br>
+                        
+                        <input type="text" class="form-control" id="result" name="Export_Turnover_B" placeholder="0" style="margin-top:35px" autocomplete="false" disabled="disabled">
+                      </div>
+                     
+                    </div><br>
+
+
+                    <div class="row mt-3">
+                      <h5> Are you interested in getting registered on Government e-Market (GeM) Portal. :</h5>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Government_e_Market_option" id="interested_yes">
+                        <label class="form-check-label" for="interested_yes">YES</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Government_e_Market_option" id="interested_no">
+                        <label class="form-check-label" for="interested_no">NO</label>
+                      </div>
+                    </div>
+                    <div class="row mt-3">
+                      <h5> Are you interested in getting registered on TReDS Portals(one or more)</h5>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="TReDS_Portals_option" id="TReDS_Portals_yes">
+                        <label class="form-check-label" for="TReDS_Portals_yes">YES</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="TReDS_Portals_option" id="TReDS_Portals_no">
+                        <label class="form-check-label" for="TReDS_Portals_no">NO</label>
+                      </div>
+                    </div><br>
+                    <div class="row mt-3">
+                      <h5> District Industries Centre / जिला उद्योग कार्यालय</h5>
+                      <br>
+                      <select class="form-select" name="District_Industries_option" aria-label="Default select example">
+                        <option selected="selected">Choose DIC</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div><br>
+                    <div class="row">
+                      <b target="_blank" class="declaration_condition_link">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
+                      
+                        
+                          I hereby declare that information given above are true to the best of my knowledge. For any information, that may be required to be verified, proof/evidence shall be produced immediately before the concerned authority. / मैं एतद्द्वारा घोषणा करता हूँ कि उपर्युक्त सूचना मेरी जानकारी में सही है। कोई सूचना जिसको सत्यापित किया जाना अपेक्षित हो, उसे संबंधित प्राधिकारी के समक्ष तत्काल उपलब्ध कराया जाएगा।
+                        
+                      </b>
+                    </div>
+                    <div class="text-center">
+                      <br>
+                      <button class="btn btn-primary" type="submit">Submit & Get Final OTP</button>
+                    </div>
+
+                  
+  
+  
+  
+  <input class="pre_btn" type="button" value="Previous">
+  <input class="submit_btn" type="submit" value="Submit">
+  </fieldset>
+</form>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    $(document).ready(function() {
+    var count = 0; // To Count Blank Fields
+    /*------------ Validation Function-----------------*/
+    $(".submit_btn").click(function(event) {
+    var radio_check = $('.rad'); // Fetching Radio Button By Class Name
+    var input_field = $('.text_field'); // Fetching All Inputs With Same Class Name text_field & An HTML Tag textarea
+    var text_area = $('textarea');
+    // Validating Radio Button
+    if (radio_check[0].checked == false && radio_check[1].checked == false) {
+    var y = 0;
+    } else {
+    var y = 1;
+    }
+    // For Loop To Count Blank Inputs
+    for (var i = input_field.length; i > count; i--) {
+    if (input_field[i - 1].value == '' || text_area.value == '') {
+    count = count + 1;
+    } else {
+    count = 0;
+    }
+    }
+    // Notifying Validation
+    if (count != 0 || y == 0) {
+    alert("*All Fields are mandatory*");
+    event.preventDefault();
+    } else {
+    return true;
+    }
+    });
+    /*---------------------------------------------------------*/
+    $(".next_btn").click(function() { // Function Runs On NEXT Button Click
+    $(this).parent().next().fadeIn('slow');
+    $(this).parent().css({
+    'display': 'none'
+    });
+    // Adding Class Active To Show Steps Forward;
+    $('.active').next().addClass('active');
+    });
+    $(".pre_btn").click(function() { // Function Runs On PREVIOUS Button Click
+    $(this).parent().prev().fadeIn('slow');
+    $(this).parent().css({
+    'display': 'none'
+    });
+    // Removing Class Active To Show Steps Backward;
+    $('.active:last').removeClass('active');
+    });
+    // Validating All Input And Textarea Fields
+    $(".submit_btn").click(function(e) {
+    if ($('input').val() == "" || $('textarea').val() == "") {
+    alert("*All Fields are mandatory*");
+    return false;
+    } else {
+    return true;
+    }
+    });
+    });
+    </script>
+
+
+
+
+
+
+<script >
+    window.onload = function() {
+    var src = document.getElementById("male_employed"),
+        src1 = document.getElementById("female_employed"),
+        src2 = document.getElementById("others_employed"),
+        dst = document.getElementById("total_employed");
+
+
+
+        
+ src.addEventListener('input', function() {
+        dst.value = Number(src.value);
+    });
+    src1.addEventListener('input', function() {
+        dst.value = Number(src.value) + Number(src1.value);
+    });
+    src2.addEventListener('input', function() {
+        dst.value = Number(src.value) + Number(src1.value) + Number(src2.value);
+    });
+};
+
+
+
+
+ function reSum()
+  {
+    var num1 = parseInt(document.getElementById("Written_Down_Value").value);
+    var num2 = parseInt(document.getElementById("Exclusion_of_cost").value);
+
+
+    document.getElementById("Sum").value = num1 - num2;
+  }
+
+
+
+  
+
+
+
+
+
+values = [];
+function addRecord() {
+  var inp = document.getElementById('plant');
+  values.push(inp.value);
+  inp.value = "";  
+      
+            
+  }
+  
+  function displayRecord() {
+            document.getElementById("values").innerHTML = values.join(", ");
+          }
+                
+
+        </script>
+
+
+
+
+        
+        <script>
+          // Create a "close" button and append it to each list item
+          var myNodelist = document.getElementsByClassName("multili");
+          var i;
+          for (i = 0; i < myNodelist.length; i++) {
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            myNodelist[i].appendChild(span);
+          }
+          
+          // Click on a close button to hide the current list item
+          var close = document.getElementsByClassName("close");
+          var i;
+          for (i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+              var div = this.parentElement;
+              div.style.display = "none";
+            }
+          }
+          
+          // Add a "checked" symbol when clicking on a list item
+          var list = document.querySelector('ul.multiul');
+          list.addEventListener('click', function(ev) {
+            if (ev.target.classname === 'multili') {
+              ev.target.classList.toggle('checked');
+            }
+          }, false);
+          
+          // Create a new list item when clicking on the "Add" button
+          function newElement() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("myInput").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            if (inputValue === '') {
+              alert("You must write something!");
+            } else {
+              document.getElementById("myUL").appendChild(li);
+            }
+            document.getElementById("myInput").value = "";
+          
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+          
+            for (i = 0; i < close.length; i++) {
+              close[i].onclick = function() {
+                var div = this.parentElement;
+                div.style.display = "none";
+              }
+            }
+          }
+
+
+
+
+
+
+
+
+
+
+            function insertValue()
+            {
+                var select = document.getElementById("select"),
+                    txtVal = document.getElementById("myInput").value,
+                    newOption = document.createElement("OPTION"),
+                    newOptionVal = document.createTextNode(txtVal);
+
+                newOption.appendChild(newOptionVal);
+                select.insertBefore(newOption,select.firstChild);
+            }
+
+</script>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("Total_Turnover_A").value;
+  document.getElementById("result").value = x;
+}
+</script>
+
+
+<!--<script>-->
+
+<!--var listA = [{name:'1 Bedroom 350 to 700 sq ft', value:'1 Bedroom 350 to 700 sq ft'}, {name:'2 Bedroom 700 to 1300 sq ft', value:'2 Bedroom 700 to 1300 sq ft'}, {name:'3 Bedroom 1300 to 2000 sq ft', value:'3 Bedroom 1300 to 2000 sq ft'}];-->
+
+<!-- var listB = [{name:'Studio 400-600 sq ft', value:'Studio 400-600 sq ft'}, {name:'Studio Alcove 600-700 sq ft', value:'Studio Alcove 600-700 sq ft'}];-->
+
+<!--  $(document).ready( function() {-->
+<!--      $("input[name='chk']").on('change',function() {-->
+
+<!--          if($(this).is(':checked') && $(this).val() == '1')-->
+<!--          {-->
+<!--            $('#describe').empty()-->
+<!--            $.each(listA, function(index, value) {-->
+<!--             $('#describe').append('<option value="'+value.value+'">'+value.name+'</option>');-->
+<!--            });-->
+<!--          }-->
+<!--          else if($(this).is(':checked') && $(this).val() == '2')-->
+<!--          {-->
+<!--            $('#describe').empty()-->
+<!--            $.each(listB, function(index, value) {-->
+<!--             $('#describe').append('<option value="'+value.value+'">'+value.name+'</option>');-->
+<!--            });-->
+<!--          }-->
+<!--          else-->
+<!--          {-->
+
+<!--          }-->
+
+<!--    });-->
+<!-- });-->
+
+<!--</script>-->
+
+
+
+
+
+
+    <script src="{% static 'MSME_app/js/nic.js'%}"></script>
+    <script src="{% static 'MSME_app/js/state_dist2.js'%}"></script>
+    <script src="{% static 'MSME_app/js/state.js'%}"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>

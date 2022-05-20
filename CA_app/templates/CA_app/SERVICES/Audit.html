@@ -1,0 +1,58 @@
+{% extends 'CA_app/BASECODE/CA_app_base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+ <section style="padding-top:50px;margin:50px">
+
+    <div class="text-center">
+        <h2 class="hover-underline-animation"><b style="color:black">Audit</b> <span style="color:#0077b5"><b>Services</b></span></h2>
+    </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-6">
+        <img src="{% static 'CA_app/images/au.png'%}" height="400px" width="100%">
+      </div>
+      <div class="col-sm-6">
+
+        <br>
+         <b><h5>Broadly, Audit involves the following :</h5></b>
+        <ul>
+          <li>
+            <p style="font-size:16px">Indepth study of existing systems, procedures and controls for proper understanding. Suggestions for improvement and strengthening.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Comprehensive review to ensure that the accounts are prepared in accordance with Generally Accepted Accounting Policies and applicable Accounting Standards/IFRS.</p>
+          </li>
+          <li>
+            <P style="font-size:16px"> Checking the genuineness of the expenses booked in accounts.</p>
+          </li>
+
+          
+        </ul>
+        <b><h5>Types of Audits conducted :</h5></b>
+         <ul>
+          <li>
+            <p style="font-size:16px">Statutory Audit of Companies.</p>
+          </li>
+          <li>
+            <p style="font-size:16px"> Tax Audit under Section 44AB of the Income Tax Act, 1961.</p>
+          </li>
+          <li>
+            <P style="font-size:16px"> Audit under other sections of the Income Tax Act, 1961 such as 80HHC, 80-IA, etc.</p>
+          </li>
+
+
+        </ul>
+      </div>
+          <div class="col-sm-12 mt-5">
+   {% include 'CA_app/SERVICES/Request_form/request_form.html' %}
+      {% block request_content %}
+
+      {% endblock request_content %}
+    </div>
+  </div>
+  </div>
+</section>
+  {% endblock content %}

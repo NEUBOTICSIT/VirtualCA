@@ -1,0 +1,185 @@
+<!DOCTYPE html>{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Virtual CA Office</title>
+    <link rel="icon" href="{%  static 'CA_app/images/logo.png'%}" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'CA_app/css/index.css'%}">
+    <link rel="stylesheet" href="{% static 'CA_app/css/style.css'%}">
+     <link rel="stylesheet" href="{% static 'CA_app/css/chat.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  </head>
+  <body >
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style=" box-shadow:inset 0px -7px 6px -6px #7C99AC; ">
+
+
+
+    <div class="scene" style="background-color:none;margin-left:30px;margin-right:100px">
+      <div class="card" style="width: 85px; height: 60px;border:none;background-color:none">
+        <a href="{% url 'index'%}"><img class="face front" src="{% static 'CA_app/images/logo.png'%}"  alt="{% static 'CA_app/images/logo.png'%}"></a>
+          <a href="{% url 'index'%}"><img class="face back" src="{% static 'CA_app/images/logo.png'%}"  alt="{% static 'CA_app/images/logo.png'%}"></a>
+       <h5 class="ml2" style="position:absolute;top:60px;color:#0077b5;text-align:center"><b>Virtual CA</b></h5>
+        </div>
+    </div>
+
+
+    {% comment %} <img src="{% static 'CA_app/images/logo.png'%}" height="50px" width="50px"> {% endcomment %}
+
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+
+
+
+      <ul class="navbar-nav">
+        <li class="nav-item active hover-underline-animation" >
+          <a class="nav-link " href="{% url 'index'%}" style="text-align: center; color:#0077b5"><i style="font-size:22px;color:#0077b5" class="fas zoom ">&#xf6f1;</i><br><span style="font-weight:normal">Home</span>  <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item hover-underline-animation">
+          <a class="nav-link" href="{% url 'about'%}" style="text-align: center;color:#0077b5"><i style="font-size:22px;color:#0077b5" class="fas zoom">&#xf21d;</i><br><span style="font-weight:normal">  About</span> </a>
+        </li>
+
+<!--        <li class="nav-item dropdown">-->
+<!--          <a class="nav-link dropdown-toggle" style="text-align:center;color:#0077b5"  href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--            <i style="font-size:22px;color:#0077b5" class="fa zoom">&#xf0c0;</i><br> <span style="font-weight:normal"> Start a business </span>-->
+<!--          </a>-->
+
+        <li class="nav-item dropdown" style="text-align:center;margin-bottom:1px;">
+          <a href="{% url 'all_business'%}"><i style="font-size:20px; color:#0077b5" class="fa zoom">&#xf0c0;</i><br></a>
+            <a class="nav-link  dropdown-toggle" style="color:#0077b5" href="{% url 'all_services'%}" data-bs-toggle="dropdown"><span style="font-weight:normal"> Start a business </span></a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'proprietorship'%}">Proprietorship</a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'partnership'%}">Partnership</a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'one_person'%}">One Person Company</a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'ltd_liability'%}">Limited Liability Partnership</a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'private'%}"> Private Limited Company</a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'public'%}"> Public Limited Company</a>
+          </div>
+        </li>
+<!--        <li class="nav-item hover-underline-animation"><a class="nav-link" href="{% url 'all_services'%}" style="text-align: center;color:#0077b5"><i style="font-size:22px;color:#0077b5" class="fa zoom">&#xf085;</i><br> <span style="font-weight:normal">Services </span></a></li> -->
+        <li class="nav-item dropdown" style="text-align:center;margin-bottom:1px;">
+          <a href="#"><i style="font-size:20px; color:#0077b5" class="fa zoom ">&#xf085;</i></a><br>
+          <a class="nav-link  dropdown-toggle" style="color:#0077b5" href="{% url 'all_services'%}" data-bs-toggle="dropdown"><span style="font-weight:normal"> Services </span></a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'international_Services'%}">International Services</a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'Income_Tax'%}">Income_Tax </a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'Accounting'%}">Accounting</a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'GST'%}">GST</a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'Payroll'%}">Payroll</a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'Corporate_Finance'%}">Corporate Finance</a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'Audit'%}">Audit</a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'TDS'%}">TDS</a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'Corporate_Services'%}">Corporate_Services</a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'Outsourcing'%}">Outsourcing</a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'Service_Non_Resident'%}">Service Non Resident</a>
+
+
+          </div>
+        </li>
+
+
+
+<!--         <li class="nav-item dropdown" id="myDropdown" style="text-align:center">-->
+<!--               -->
+<!--                <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown" style="text-align: center;color:#0077b5" > <i style="font-size:24px;color:#0077b5" class="fa zoom">&#xf25d;</i><br>-->
+<!--                  <span style="font-weight:normal">Registrations</span>-->
+<!--                </a>-->
+
+        <li class="nav-item dropdown" style="text-align:center;margin-bottom:1px;">
+          <a href="{% url 'registration'%}"><i style="font-size:20px; color:#0077b5"> </i> <i style="font-size:24px;color:#0077b5" class="fa zoom">&#xf25d;</i><br>
+          <a class="nav-link  dropdown-toggle" style="color:#0077b5" href="{% url 'all_services'%}" data-bs-toggle="dropdown"><span style="font-weight:normal">Registrations </span></a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'gst_home'%}">GST <i class="fa fa-caret-right " aria-hidden="true"></i></a>
+                    <ul class="submenu dropdown-menu">
+                      <li>
+
+
+                        <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'reg'%}">GST-Registration</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'gst_change'%}">GST-Modification</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'gst_cancel'%}">GST-cancellation</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'msme_about'%}">MSME  <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                    <ul class="submenu dropdown-menu">
+                      <li>
+                        <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'msme_reg'%}"> MSME-Registration</a>
+                      </li>
+
+                    </ul>
+
+
+                    <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="#">Professional Tax Registration</a>
+                    <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="#">TAN Registration</a>
+                    <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="#">Import/Export Code</a>
+                    <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="#">FSSAI Registration</a>
+                    <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="#">ESI Registration</a>
+
+                  </li>
+                </ul>
+          </a></li>
+          <li>
+
+
+         <li class="nav-item dropdown" style="text-align:center;margin-bottom:1px;">
+          <a href="{% url 'tax_filing'%}"><i style="font-size:20px; color:#0077b5"> </i> <i style="font-size:24px;color:#0077b5" class="fas zoom">&#xf46d;</i><br>
+          <a class="nav-link  dropdown-toggle" style="color:#0077b5" href="{% url 'all_services'%}" data-bs-toggle="dropdown"><span style="font-weight:normal">Tax Filling </span></a>
+
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'incometax'%}">Income Tax Filing</a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'business'%}">Business Tax Filing </a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'GST_Filing'%}">GST Filing</a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'tds_return'%}">TDS Return</a>
+            <a class="dropdown-item hover-underline-animation" style="color:#0077b5" href="{% url 'esi'%}">ESI Return</a>
+          </div>
+        </li>
+        <li class="nav-item hover-underline-animation"><a class="nav-link" href="{% url 'blog'%}" style="text-align: center;color:#0077b5"> <i style="font-size:22px;color:#0077b5" class="fab zoom">&#xf37d;</i><br><span style="font-weight:normal">Blog</span> </a></li>
+        <li class="nav-item hover-underline-animation"><a class="nav-link" href="{% url 'contact'%}" style="text-align: center;color:#0077b5"><i style="font-size:22px;color:#0077b5;" class="fas zoom">&#xf87b;</i><br><span style="font-weight:normal"> Contact Us</span> </a></li>
+
+        <span style="margin-left:80px"><li class="nav-item hover-underline-animation"><a class="nav-link" href="{% url 'login'%}" style="text-align: center;color:#0077b5;"><i style="font-size:22px;color:#0077b5;" class="fa fa-sign-in zoom" aria-hidden="true"></i><br><span style="font-weight:normal;">Login/Register</span> </a></li></span>
+
+
+
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

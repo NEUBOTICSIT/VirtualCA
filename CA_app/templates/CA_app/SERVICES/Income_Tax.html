@@ -1,0 +1,67 @@
+{% extends 'CA_app/BASECODE/CA_app_base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+<section style="margin:50px">
+
+   <div class="text-center">
+        <h2 class="hover-underline-animation"><b style="color:black">Income</b> <span style="color:#0077b5"><b>Services</b></span></h2>
+    </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6" style="padding-top:50px;">
+        <img src="{% static 'CA_app/images/inco.png'%}" height="400px" width="100%">
+      </div>
+      <div class="col-sm-6" style="padding:50px;">
+
+        <br>
+        <ul>
+          <li>
+            <p style="font-size:16px"> Consultancy on various intricate matters pertaining to Income tax.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Effective Tax Management and Advisory Services.</p>
+          </li>
+          <li>
+            <P style="font-size:16px">Tax Planning for Corporates and others.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Designing / restructuring salary structure to minimise tax burden.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Obtaining Advance tax Rulings.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Obtaining No Objection Certificates from Income Tax department.</p>
+          </li>
+          <li>
+            <p style="font-size:16px"> Obtaining PAN for assessees, employees etc.</p>
+          </li>
+          <li>
+            <p style="font-size:16px"> Advance tax estimation and deposit.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Assessing the liability towards deferred taxes.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Providing regular updates on amendments, circulars, notifications & judgments.</p>
+          </li>
+
+        </ul>
+      </div>
+           <div class="col-sm-12 mt-5">
+ {% include 'CA_app/SERVICES/Request_form/request_form.html' %}
+      {% block request_content %}
+
+      {% endblock request_content %}
+
+  </div>
+  </div>
+  </div>
+</section>
+
+
+{% endblock content %}

@@ -1,0 +1,142 @@
+{% extends 'CA_app/BASECODE/CA_app_base.html' %}
+{% block content %}
+{% load static %}
+
+
+
+<section class="enquiry-sec">
+      <div class="container">
+        <h2>Types Of <span>Business</span>
+        </h2>
+      </div>
+
+</section>
+<div class="container">
+     <div class="row">
+
+       <div class="col-sm-4">
+           <div class="services-box-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+            <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+            <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+            <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+          </svg>
+           <a class="serviceA" href="{% url 'ltd_liability'%}">
+          <div class="icons">
+            <img src="{% static 'CA_app/images/start_a_business_img/LLP1.png'%}" height="70px" width="70px" alt="" title="">
+          </div>
+          <h4>Limited Liability Partnership</h4>
+           <p class="text-secondary">Limited Liability Partnership (LLP) offer limited liability protection...</p>
+
+           </a></div>
+
+       </div>
+
+<div class="col-sm-4">
+ <div class="services-box-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+              <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+              <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+              <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+              <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+            </svg>
+     <a class="serviceA" href="{% url 'one_person'%}">
+            <div class="icons">
+              <img src="{% static 'CA_app/images/start_a_business_img/one-person-company.jpg'%}" alt="" title="">
+            </div>
+            <h4>One Person Company</h4>
+            <p class="text-secondary">One Person Company is a new type of business entity that allows...</p>
+
+     </a></div>
+
+       </div>
+
+ <div class="col-sm-4">
+
+   <div class="services-box-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+                <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+                <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+              </svg>
+       <a class="serviceA" href="{% url 'partnership'%}">
+              <div class="icons">
+                <img src="{% static 'CA_app/images/start_a_business_img/partnership.png'%}" alt="" title="">
+              </div>
+              <h4>Partnership</h4>
+                <p class="text-secondary">Partnership could be registered or unregistered...</p>
+
+       </a></div>
+     </div>
+
+
+     <div class="row">
+       <div class="col-sm-4">
+         <div class="services-box-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                  <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+                  <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+                  <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                  <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+                </svg>
+             <a class="serviceA" href="{% url 'private'%}">
+                <div class="icons">
+                  <img src="{% static 'CA_app/images/start_a_business_img/pvt.jpg'%}" height="70px" width="70px" alt="" title="">
+                </div>
+                <h4>Private limited company</h4>
+                <p class="text-secondary">Private limited company is the most popular corporate...</p>
+
+             </a></div>
+       </div>
+
+         <div class="col-sm-4">
+
+          <div class="services-box-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                    <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+                    <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+                    <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                    <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+                  </svg>
+
+               <a class="serviceA" href="{% url 'proprietorship'%}">
+                  <div class="icons">
+                    <img src="{% static 'CA_app/images/start_a_business_img/Proprietorship1.png'%}" height="80px" width="70px" alt="" title="">
+                  </div>
+                  <h4>Proprietorship</h4>
+                <p class="text-secondary">Proprietorship is an alias for the Proprietor to do business...</p>
+
+         </a> </div>
+       </div>
+
+         <div class="col-sm-4">
+         <div class="services-box-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                    <line class="top" x1="0" y1="0" x2="800" y2="0"></line>
+                    <line class="left" x1="0" y1="90%" x2="0" y2="920"></line>
+                    <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                    <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+                  </svg>
+             <a class="serviceA" href="{% url 'public'%}">
+                  <div class="icons">
+                    <img src="{% static 'CA_app/images/start_a_business_img/public.jpeg'%}" height="70px" width="70px" alt="" title="">
+                  </div>
+                  <h4>Public Limited Company</h4>
+                <p class="text-secondary">Public Limited Company Limited company is the ideal choice of corporate...</p>
+
+             </a></div>
+         </div>
+
+     </div>
+     </div>
+
+</div>
+
+
+
+
+
+
+{% endblock content %}

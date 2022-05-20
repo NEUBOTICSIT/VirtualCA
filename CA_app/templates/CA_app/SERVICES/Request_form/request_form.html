@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Virtual CA Office</title>
+  </head>
+
+<body>
+<hr>
+<div class="container mt-5" style="border:#0077b5 2px solid">
+<form method="POST" style="padding-left:40px;padding-right:40px">
+    {% csrf_token %}
+    <h3 style="text-align:center;margin:5px;color:#0077b5">Service Request Form</h3>
+  <div class="row mt-5">
+    <div class="col-sm-12">
+   <input type="text" class="form-control" id="name" placeholder="Enter Name" name="Name">
+
+    </div>
+  </div>
+
+      <div class="row mt-5">
+    <div class="col-sm-12">
+    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+    </div>
+
+          <div class="row mt-5">
+    <div class="col-sm-12">
+ <input type="tel" class="form-control" id="mobile" placeholder="Enter Mobile" name="mobile">
+
+    </div>
+          </div>
+    <br>
+
+
+    <div class="row">
+    <div class="col-sm-3" >
+        <div class="row" >
+            <div class="col-sm-1" >
+        <input type="checkbox" id="all" onclick="toggle(this);" name="vehicle1" value="Bike">
+                </div>
+            <div class="col-sm-4" >
+         <label for="all" >All Services</label>
+                </div>
+            </div>
+    </div>
+    </div>
+    <hr style="color:blue">
+
+<div class="row" >
+    <div class="col-sm-3" >
+        <div class="row" >
+            <div class="col-sm-1" >
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                </div>
+            <div class="col-sm-2" >
+         <label for="vehicle1" >Accounting</label>
+                </div>
+            </div>
+    </div>
+
+
+    <div class="col-sm-3" >
+        <div class="row" >
+            <div class="col-sm-1" >
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                </div>
+            <div class="col-sm-2" >
+         <label for="vehicle1" >Audit</label>
+                </div>
+            </div>
+    </div>
+
+
+    <div class="col-sm-3" >
+        <div class="row" >
+            <div class="col-sm-1" >
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                </div>
+            <div class="col-sm-2" >
+         <label for="vehicle1" >Corporate Finance</label>
+                </div>
+            </div>
+    </div>
+
+
+    <div class="col-sm-3" >
+        <div class="row" >
+            <div class="col-sm-1" >
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                </div>
+            <div class="col-sm-2" >
+         <label for="vehicle1" >Corporate Services</label>
+                </div>
+            </div>
+    </div>
+
+
+    <div class="col-sm-3" >
+        <div class="row" >
+            <div class="col-sm-1" >
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                </div>
+            <div class="col-sm-2" >
+         <label for="vehicle1" >GST</label>
+                </div>
+            </div>
+    </div>
+
+    <div class="col-sm-3" >
+        <div class="row" >
+            <div class="col-sm-1" >
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                </div>
+            <div class="col-sm-2" >
+         <label for="vehicle1" >Income Tax</label>
+                </div>
+            </div>
+    </div>
+
+    <div class="col-sm-3" >
+        <div class="row" >
+            <div class="col-sm-1" >
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                </div>
+            <div class="col-sm-2" >
+         <label for="vehicle1" >International Serices</label>
+                </div>
+            </div>
+    </div>
+
+
+    <div class="col-sm-3" >
+        <div class="row" >
+            <div class="col-sm-1" >
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                </div>
+            <div class="col-sm-2" >
+         <label for="vehicle1" >Outsourcing</label>
+                </div>
+            </div>
+    </div>
+
+
+    <div class="col-sm-3" >
+        <div class="row" >
+            <div class="col-sm-1" >
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                </div>
+            <div class="col-sm-2" >
+         <label for="vehicle1" >Payroll</label>
+                </div>
+            </div>
+    </div>
+
+    <div class="col-sm-3" >
+        <div class="row" >
+            <div class="col-sm-1" >
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                </div>
+            <div class="col-sm-2" >
+         <label for="vehicle1" >TDS</label>
+                </div>
+            </div>
+
+
+    </div>
+    <div class="col-sm-3" >
+        <div class="row" >
+            <div class="col-sm-1" >
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                </div>
+            <div class="col-sm-2" >
+         <label for="vehicle1" >Service for non Resident</label>
+                </div>
+            </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+    </form>
+</div>
+
+<script>
+
+function toggle(source) {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] != source)
+            checkboxes[i].checked = source.checked;
+    }
+}
+</script>
+</body>
+</html>

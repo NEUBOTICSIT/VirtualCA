@@ -1,0 +1,325 @@
+
+/* start services css */
+.hm-text-sec {
+    padding-bottom: 50px;
+    padding-top: 50px;
+    display: block;
+    clear: both;
+    background-color: #fff;
+    position: relative;
+}
+
+.hm-text-sec h1:before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #47bcdf;
+    left: 0;
+    top: 100%;
+    position: absolute;
+}
+
+.hm-text-sec h1 {
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #354168;
+    position: relative;
+    padding-bottom: 5px;
+    font-weight: 600;
+    margin: 0 0 30px;
+    position: relative;
+}
+
+.hm-text-sec h1 span {
+    color: #47bcdf;
+}
+
+.hm-services-sec {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-image: url(../images/bg-full.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hm-services-sec h2 {
+    color: #333;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 0 0 50px;
+    padding-bottom: 5px;
+    position: relative;
+    text-align: center;
+}
+
+.hm-services-sec h2:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80px;
+    background: #47bcdf;
+    top: 100%;
+    height: 2px;
+}
+
+.hm-services-sec h2 span {
+    color: #1679ab;
+}
+
+.services-box-item {
+    background: #fff;
+    text-align: center;
+    padding: 3rem 3rem 3.5rem;
+    position: relative;
+    height: 300px;
+    margin-bottom: 30px;
+    overflow:hidden;
+}
+
+.services-box-item svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.services-box-item h4 {
+    color: #2b2b2b;
+    font-size: 18px;
+    margin: 0 0 2rem;
+    position: relative;
+    font-weight: bold;
+}
+
+.services-box-item p {
+    margin: 0 0 6rem;
+    color: #4c4e54;
+    font-size: 14px
+    overflow: clip;
+}
+
+.services-box-item a {
+
+    font-size: 14px;
+    text-decoration: none
+}
+
+.services-box-item:hover a {
+    color: #2e7fe6;
+    text-decoration: none
+}
+
+.services-box-item:hover {
+    border-color: #2e7fe6
+}
+
+.services-box-item .icons {
+    margin: 0 0 1rem
+}
+
+.services-box-item a {
+    position: relative;
+    z-index: 22
+}
+
+.services-box-item p {
+    position: relative;
+    z-index: 22;
+    line-height: 22px;
+    font-size: 14px;
+    overflow: clip;
+}
+
+.services-box-item:hover .button a {
+    background: #2e7fe6;
+    color: #fff !important
+}
+
+.services-box-item.box {
+    border: 0;
+    margin: 0 0 4.5em
+}
+
+
+.services-box-item img {
+    height: 42px;
+
+ /*   filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    -ms-filter: grayscale(1);
+
+    image-decoration:none;*/
+}
+
+.services-box-item:hover img {
+
+     filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    -ms-filter: grayscale(0)
+    }
+
+
+
+.services-box-item svg line {
+    stroke: #f5f5f5
+}
+
+.services-box-item:hover svg line {
+    stroke: #2e7fe6
+}
+
+.services-box-item svg line {
+    stroke-width: 8;
+    fill: none;
+    -webkit-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out
+}
+
+.services-box-item:hover svg line {
+    -webkit-transition-delay: .1s;
+    transition-delay: .1s
+}
+
+.services-box-item svg line.bottom,
+.services-box-item svg line.top {
+    stroke-dasharray: 115% 100%
+}
+
+.services-box-item:hover svg line.bottom,
+.services-box-item:hover svg line.top {
+    stroke-dasharray: 120% 80%
+}
+
+.services-box-item svg line.left,
+.services-box-item svg line.right {
+    stroke-dasharray: 80% 100%
+}
+
+.services-box-item:hover svg line.left,
+.services-box-item:hover svg line.right {
+    stroke-dasharray: 110% 100%
+}
+
+.services-box-item:hover svg line.top {
+    -webkit-transform: translateX(-545px);
+    transform: translateX(-545px)
+}
+
+.services-box-item:hover svg line.bottom {
+    -webkit-transform: translateX(550px);
+    transform: translateX(550px)
+}
+
+.services-box-item:hover svg line.left {
+    -webkit-transform: translateY(900px);
+    transform: translateY(900px)
+}
+
+.services-box-item:hover svg line.right {
+    -webkit-transform: translateY(-900px);
+    transform: translateY(-900px)
+}
+
+.services-box-item:hover h4,
+.services-box-item:hover a {
+    color: #2e7fe6;
+}
+
+
+
+.serviceA :hover
+{
+text-decoration:none;
+}
+
+/*end services css */
+
+
+
+
+
+
+
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+  height:300px;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 100px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #0991d9;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: #055782;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+
+
+/*start a business*/

@@ -1,0 +1,29 @@
+{% extends 'CA_app/BASECODE/CA_app_base.html' %}
+{% block content %}
+{% load static %}
+
+
+<section style="padding:50px">
+    <div class="text-center">
+<h2 class="hover-underline-animation">TDS Return</h2>
+</div>
+
+ <div class="container-fluid" style="margin-bottom:30px" >
+     <br>
+
+
+  <div class="row">
+    <div class="col-sm-5"><img class="taximg1" height="400px" width="100%" src="{% static 'CA_app/images/tax_filing_img/tds1.png'%}" alt="Pineapple" ></div>
+    <div class="col-sm-7 mt-5" >
+       <p>TDS return filing is mandatorily required every quarter by all persons and entities who have deducted tax at source. CA Office can help prepare and file TDS return from Rs.1499/-</p>
+        <li>Document Collection</li>
+        <li>Return Prepartion</li>
+        <li>Return Filing</li>
+    </div>
+   </div>
+</div>
+    
+</section>
+
+
+{% endblock content %}

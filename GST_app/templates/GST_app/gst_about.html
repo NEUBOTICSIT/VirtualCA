@@ -1,0 +1,103 @@
+
+{% extends 'GST_app/BASECODE/gst_base.html' %}
+
+{% block gst_content %}
+
+{% load static %}
+
+
+
+<div class="text-center" style="height:50px;width:100%;background-color:#0f6491">
+           <h2 class="hover-underline-animation" style="color:white">GST</h2>
+    </div>
+  <section>
+<br>
+      <br>
+<div class="container">
+     <div class="row">
+
+       <div class="col-sm-6 ">
+
+           <div class="services-box-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+            <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+            <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+            <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+          </svg>
+           <a class="serviceA" href="{% url 'reg'%}">
+          <div class="icons">
+            <img src="{% static 'GST_app/images/img.png'%}" height="70px" width="70px" alt="" title="">
+          </div>
+          <h4>GST Registration</h4>
+         <p> GST registration is mandatory for all eCommerce Sellers Citizen can apply for New GST by Registrating online without Visiting the Govt. office.
+</p>
+           </a></div>
+
+       </div>
+
+<div class="col-sm-6">
+ <div class="services-box-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+              <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+              <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+              <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+              <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+            </svg>
+     <a class="serviceA" href="{% url 'gst_change'%}">
+            <div class="icons">
+              <img src="{% static 'GST_app/images/gst-mod.png'%}" alt="" title="">
+            </div>
+            <h4>GST Modification</h4>
+         <p> Any changes made in the GST Registration or the details entered in the GST certificate are referred to as GST modification or update.</p>
+     </a></div>
+
+       </div>
+
+     </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="services-box-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+              <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+              <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+              <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+              <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+            </svg>
+     <a class="serviceA" href="{% url 'gst_cancel'%}">
+            <div class="icons">
+              <img src="{% static 'GST_app/images/GST-can2.png'%}" alt="" title="">
+            </div>
+            <h4>GST Cancellation</h4>
+         <p>The registration granted under GST can be cancelled for specified reasons. The cancellation can either be initiated by the department on their own motion or the registered person can apply for cancellation of their registration.</p>
+     </a></div>
+
+        </div>
+
+         <div class="col-sm-6">
+
+            <div class="services-box-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+              <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+              <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+              <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+              <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+            </svg>
+     <a class="serviceA" href="#">
+            <div class="icons">
+              <img src="{% static 'MSME_app/images/about_images/img.png'%}" alt="" title="">
+            </div>
+            <h4>FAQ</h4>
+         <p> The compilation of Frequently Asked Questions (FAQs) on GST brought out by the National Academy of. Customs, Indirect Taxes & Narcotics ...
+</p>
+     </a></div>
+        </div>
+
+
+    </div>
+</div>
+</section>
+
+
+{% endblock gst_content %}

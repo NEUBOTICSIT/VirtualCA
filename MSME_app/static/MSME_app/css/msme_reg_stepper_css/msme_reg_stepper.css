@@ -1,0 +1,186 @@
+      * {
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      height: 100%
+    }
+
+    h2 {
+      color: #2F8D46;
+    }
+
+    #form {
+
+      position: relative;
+      margin-top: 20px
+    }
+
+    #form fieldset {
+      background: white;
+      border: 0 none;
+      border-radius: 0.5rem;
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0;
+      padding-bottom: 20px;
+      position: relative
+    }
+
+
+
+    #form fieldset:not(:first-of-type) {
+      display: none
+    }
+
+    #form .previous-step,
+    .next-step {
+      width: 120px;
+      font-weight: bold;
+      color: white;
+      border: 0 none;
+      border-radius: 0px;
+      cursor: pointer;
+      padding: 10px 5px;
+      margin: 10px 5px 10px 0px;
+      float: right
+    }
+
+    .form,
+    .previous-step {
+      background: #22a2d0;
+    }
+
+    .form,
+    .next-step {
+      background: #22a2d0;
+    }
+
+    #form .previous-step:hover,
+    #form .previous-step:focus {
+      background-color: #000000
+    }
+
+    #form .next-step:hover,
+    #form .next-step:focus {
+      background-color: #22a2d0
+    }
+
+    .text {
+      color: #2F8D46;
+      font-weight: normal
+    }
+
+    #progressbar {
+      text-align:center;
+      margin-bottom: 30px;
+      overflow: hidden;
+      color: lightgrey
+    }
+
+    #progressbar .active {
+      color:#002b73
+    }
+
+    #progressbar li {
+      list-style-type: none;
+      font-size: 15px;
+      width: 25%;
+      float: left;
+      position: relative;
+      font-weight: 400
+    }
+
+    #progressbar #step1:before {
+      content: "1"
+    }
+
+    #progressbar #step2:before {
+      content: "2"
+    }
+
+    #progressbar #step3:before {
+      content: "3"
+    }
+
+    #progressbar #step4:before {
+      content: "4"
+    }
+
+    #progressbar li:before {
+      width: 50px;
+      height: 50px;
+      line-height: 45px;
+      display: block;
+      font-size: 20px;
+      color: #ffffff;
+      background: lightgray;
+      border-radius: 50%;
+      margin: 0 auto 10px auto;
+      padding: 2px
+    }
+
+    #progressbar li:after {
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: lightgray;
+      position: absolute;
+      left: 0;
+      top: 25px;
+      z-index: -1
+    }
+
+    #progressbar li.active:before,
+    #progressbar li.active:after {
+      background:#22a2d0
+    }
+
+    .progress {
+      height: 15px
+    }
+
+    .progress-bar {
+      background-color:#002b73
+    }
+
+
+     input.invalid {
+         border-color:red
+     }
+
+
+
+/* ============ logo rotation ============ */
+.scene {
+  width: 100px;
+  height: 100px;
+  perspective: 100px;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 5s;
+  transform-style: preserve-3d;
+  border: none;
+  background-color:none;
+
+}
+.face {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+.scene:hover .card {
+  transform: rotateY(180deg);
+}
+
+/* ============ logo rotation ============ */

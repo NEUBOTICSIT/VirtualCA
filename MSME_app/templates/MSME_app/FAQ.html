@@ -1,0 +1,117 @@
+{% extends 'CA_app/BASECODE/CA_app_base.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+.accordion-collapse {
+    border: 0;
+}
+.accordion-button:focus {
+    box-shadow: none;
+    border: none;
+}
+.accordion-button:not(.collapsed) {
+    background: none;
+    color: #ff9800;
+    box-shadow: none;
+    border-bottom: none;
+}
+.accordion-button::after {
+    width: auto;
+    height: auto;
+    content: "+";
+    font-size: 40px;
+    background-image: none;
+    font-weight: 100;
+    color: #1b6ce5;
+    transform: translateY(-4px);
+}
+.accordion-button:not(.collapsed)::after {
+    width: auto;
+    height: auto;
+    background-image: none;
+    content: "-";
+    font-size: 48px;
+    transform: translate(-5px, -4px);
+    transform: rotate(0deg);
+}
+
+
+</style>
+
+<section class="py-5 bg-light">
+    <div class="container shadow-lg p-3 mb-5 bg-body rounded">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="accordion accordion-flush" id="faqlist">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#content-accordion-1">
+                            What is MSME Registration?
+                            </button>
+                        </h2>
+                        <div id="content-accordion-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                            <div class="accordion-body">
+                                Udyam Registration is the new process of MSME/UDYOG AADHAAR Registration launched by the the Ministry of Micro, Small and Medium Enterprises on July 1, 2020.
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#content-accordion-2">
+                            Is Aadhar number is important for msme registration?
+                            </button>
+                        </h2>
+                        <div id="content-accordion-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                            <div class="accordion-body">
+                              At present Aadhaar Number is mandatory for issuance of MSME Certificate
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#content-accordion-3">
+                            Where does it come from?
+                            </button>
+                        </h2>
+                        <div id="content-accordion-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                            <div class="accordion-body">
+                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#content-accordion-4">
+                            Where does it come from?
+                            </button>
+                        </h2>
+                        <div id="content-accordion-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                            <div class="accordion-body">
+                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#content-accordion-5">
+                            Where does it come from?
+                            </button>
+                        </h2>
+                        <div id="content-accordion-5" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                            <div class="accordion-body">
+                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+{% endblock content %}

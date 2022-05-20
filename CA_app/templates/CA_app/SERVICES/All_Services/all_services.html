@@ -1,0 +1,141 @@
+{% extends 'CA_app/BASECODE/CA_app_base.html' %}
+{% block content %}
+{% load static %}
+
+<section class="enquiry-sec">
+      <div class="container">
+        <h2>Our <span>Services</span>
+        </h2>
+      </div>
+
+</section>
+<div class="container">
+     <div class="row">
+
+       <div class="col-sm-4">
+           <div class="services-box-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+            <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+            <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+            <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+          </svg>
+           <a class="serviceA" href="{% url 'international_Services'%}">
+          <div class="icons">
+            <img src="{% static 'CA_app/images/INTERNATIONAL SERVICES.png'%}" height="70px" width="70px" alt="" title="">
+          </div>
+          <h4>INTERNATIONAL TAXATION</h4>
+          <p>•Advisory services on cross border transactions,Expatriate Taxation.</p>
+           </a></div>
+
+       </div>
+
+<div class="col-sm-4">
+ <div class="services-box-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+              <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+              <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+              <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+              <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+            </svg>
+     <a class="serviceA" href="{% url 'Income_Tax'%}">
+            <div class="icons">
+              <img src="{% static 'CA_app/images/indirect-tax.png'%}" alt="" title="">
+            </div>
+            <h4>INCOME TAX</h4>
+            <p>Consultancy on various intricate matters pertaining to Income tax, Effective Tax Management and Advisory Services.</p>
+
+     </a></div>
+
+       </div>
+
+ <div class="col-sm-4">
+
+   <div class="services-box-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+                <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+                <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+              </svg>
+       <a class="serviceA" href="{% url 'Accounting'%}">
+              <div class="icons">
+                <img src="{% static 'CA_app/images/ACCOUNTING.png'%}" alt="" title="">
+              </div>
+              <h4>ACCOUNTING</h4>
+              <p>Accounting System Design & Implementation, budgeting, Financial Accounting.</p>
+
+       </a></div>
+     </div>
+
+
+     <div class="row">
+       <div class="col-sm-4">
+         <div class="services-box-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                  <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+                  <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+                  <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                  <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+                </svg>
+             <a class="serviceA" href="{% url 'Service_Non_Resident'%}">
+                <div class="icons">
+                  <img src="{% static 'CA_app/images/registration_img/non_resident.png'%}" height="70px" width="70px" alt="" title="">
+                </div>
+                <h4>Service Of Non Resident</h4>
+                <p>•“Non-resident taxable person” means any person who occasionally undertakes transactions involving supply of goods or services or both, whether as principal or.</p>
+
+             </a></div>
+       </div>
+
+         <div class="col-sm-4">
+
+          <div class="services-box-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                    <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+                    <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+                    <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                    <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+                  </svg>
+
+               <a class="serviceA" href="{% url 'Corporate_Finance'%}">
+                  <div class="icons">
+                    <img src="{% static 'CA_app/images/CORPORATE-FINANCE.png'%}" height="80px" width="70px" alt="" title="">
+                  </div>
+                  <h4>CORPORATE FINANCE</h4>
+                  <p>Preparations of Project Reports, Preparation of CMA data for bank loans, Private placement of shares.</p>
+
+         </a> </div>
+       </div>
+
+         <div class="col-sm-4">
+         <div class="services-box-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                    <line class="top" x1="0" y1="0" x2="800" y2="0"></line>
+                    <line class="left" x1="0" y1="90%" x2="0" y2="920"></line>
+                    <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                    <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+                  </svg>
+             <a class="serviceA" href="{% url 'Audit'%}">
+                  <div class="icons">
+                    <img src="{% static 'CA_app/images/AUDIT.png'%}" height="70px" width="70px" alt="" title="">
+                  </div>
+                  <h4>AUDIT</h4>
+                  <p>Broadly, Audit involves the following, Audits conducted.</p>
+
+             </a></div>
+         </div>
+
+     </div>
+     </div>
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock content %}

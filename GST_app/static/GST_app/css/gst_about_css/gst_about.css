@@ -1,0 +1,283 @@
+ /* Start services */
+.services{
+   background-image: url('../../images/background_images.jpg');
+     background-repeat:no-repeat;
+      background-size:cover;
+
+
+}
+h1{
+   text-align:center;
+   margin: 0px auto 95px !important;
+   color: #fff;
+}
+.main{
+   width:100%;
+   min-height:360px;
+   text-align: center;
+   position: relative;
+   cursor:pointer;
+   margin-bottom: 5px;
+}
+.service{
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      position: absolute;
+      margin:-10px
+      bottom  0;
+      z-index: 1;
+      box-shadow: 0 0 20px -15px #030380;
+      transition: transform .8s;
+}
+.service-logo{
+      width: 150px;
+      height: 150px;
+      border-radius: 30%;
+      margin: -80px auto 0;
+      background: #fff;
+      border: 17px solid #007bff;
+}
+.service-logo img{
+     width: 100px;
+     margin-top: 5px;
+     transition: transform 1s;
+}
+.service h4{
+      height: 60px;
+      width: 90%;
+      background: #fff;
+      margin: 50px auto;
+      position: relative;
+}
+.service h4::after{
+       content: '';
+       width: 40px;
+       height: 30px;
+       background: linear-gradient(to right, #fff,#007bff);
+       position: absolute;
+       right: -5px;
+       top: -5px;
+       z-index: -1;
+}
+.service h4::before{
+        content: '';
+        width: 40px;
+        height: 30px;
+        background: linear-gradient(to right,#007bff,#fff);
+        position: absolute;
+        left: -5px;
+        bottom: -5px;
+        z-index: -1;
+}
+.shadowOne{
+      height: 200px;
+      width: 80%;
+      background: #fff;
+      position: absolute;
+      border-radius: 10px;
+      bottom: 0;
+      left: 10%;
+      z-index: -1;
+      box-shadow: 0 0 20px -15px #030380;
+      transition: transform .8s;
+}
+.shadowTwo{
+       height: 200px;
+       width: 64%;
+       background: #fff;
+       position: absolute;
+       border-radius: 10px;
+       bottom: 0;
+       left: 18%;
+       z-index: -2;
+}
+.main:hover .service{
+      transform: translateY(50px);
+}
+.main:hover .shadowO
+ne{
+      transform: translateY(25px);
+}
+.main:hover img{
+      transform: rotate(360deg);
+}
+/* END  services */
+/* start  GST details */
+.second.hover-underline-animation:after {
+content: '';
+position: absolute;
+width: 100%;
+transform: scaleX(0);
+height: 2px;
+bottom: 0;
+left: 0;
+background-color:#007bff;
+transform-origin: bottom right;
+transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* start   GST details */
+/* GST Registration */
+
+.msme_animation {
+  white-space: nowrap;
+  overflow: hidden;
+  font-family:  'Inter', sans-serif;
+  font-size: 29px;
+  color:#e05e22 ;
+
+}
+
+.msme registration {
+  animation: animated-text 2s steps(30,end) 0s 1 normal both;
+}
+
+.hover-animation {
+  display: inline-block;
+  position: relative;
+  color: ;
+}
+
+ .msme_animation.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007bff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+/* GST Registration */
+/* start Documents Required For GST */
+.msme_animation {
+  white-space: nowrap;
+  overflow: hidden;
+  font-family:  'Inter', sans-serif;
+  font-size: 29px;
+  color:#e05e22 ;
+
+}
+.Documents Required For MSME  {
+  animation: animated-text 2s steps(30,end) 0s 1 normal both;
+}
+ .hover-animation {
+  display: inline-block;
+  position: relative;
+  color: ;
+}
+.msme_animation.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007bff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/* End Documents Required For GST */
+ /* start Benefits Of GST Registration */
+.msme_animation {
+  white-space: nowrap;
+  overflow: hidden;
+  font-family:  'Inter', sans-serif;
+  font-size: 29px;
+  color:#e05e22 ;
+
+}
+.Benefits Of MSME Registration  {
+  animation: animated-text 2s steps(30,end) 0s 1 normal both;
+}
+.hover-animation {
+  display: inline-block;
+  position: relative;
+  color: ;
+}
+.msme_animation.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007bff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/* end Benefits Of GST Registration */
+
+
+
+.about{
+    background-image:url('../../images/Live-Wave-Background.svg') ;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+
+/* start about */
+.about_animation {
+  white-space: nowrap;
+  overflow: hidden;
+  font-family:  'Inter', sans-serif;
+  font-size: 29px;
+  color: #fff ;
+  margin-top:50px;
+  padding-top:60px;
+}
+
+.about_animation {
+  animation: animated-text 2s steps(30,end) 0s 1 normal both;
+}
+/* text animation */
+/* hover about us */
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #fff;
+}
+
+ .about_animation.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

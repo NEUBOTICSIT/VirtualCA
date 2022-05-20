@@ -1,0 +1,60 @@
+{% extends 'CA_app/BASECODE/CA_app_base.html' %}
+
+{% block content %}
+{% load static %}
+
+ <section style="padding:50px">
+        <div class="text-center">
+        <h2 class="hover-underline-animation"><b style="color:black">Non Resident</b> <span style="color:#0077b5"><b>Services</b></span></h2>
+    </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-6">
+        <img src="{% static 'CA_app/images/in.png'%}" height="400px" width="100%">
+      </div>
+      <div class="col-sm-6">
+
+        <br>
+        <ul>
+          <li>
+            <p style="font-size:16px">Allotment of Permanent Account number (PAN).</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Tax planning.</p>
+          </li>
+          <li>
+            <P style="font-size:16px">Obtaining Advance Rulings on debatable issues.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Consultancy/ advice on FEMA/RBI matters.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Filing Income Tax/ Wealth Tax Returns.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Advice on making investments.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Issuing certificate for repatriation of income / assets from India.</p>
+          </li>
+          <li>
+            <p style="font-size:16px"> Making application to RBI for various matters including sale and purchase of residential and commercial properties.</p>
+          </li>
+          
+        </ul>
+      </div>
+
+     <div class="col-sm-12 mt-5">
+     {% include 'CA_app/SERVICES/Request_form/request_form.html' %}
+      {% block request_content %}
+
+      {% endblock request_content %}
+  </div>
+  </div>
+  </div>
+</section>
+
+
+
+
+{% endblock content %}

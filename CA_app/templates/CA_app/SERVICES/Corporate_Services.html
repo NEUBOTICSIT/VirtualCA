@@ -1,0 +1,60 @@
+{% extends 'CA_app/BASECODE/CA_app_base.html' %}
+
+{% block content %}
+{% load static %}
+
+<section style="padding:50px">
+    <div class="text-center">
+        <h2 class="hover-underline-animation"><b style="color:black">Corporate </b> <span style="color:#0077b5"><b>Services</b></span></h2>
+    </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <img src="{% static 'CA_app/images/cor.png'%}" height="400px" width="100%">
+      </div>
+      <div class="col-sm-6">
+          <br>
+        <ul>
+          <li>
+            <p style="font-size:16px">Incorporation of company.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Consultancy on Company Law matters.</p>
+          </li>
+          <li>
+            <P style="font-size:16px">Planning for Mergers, Acquisitions, De-mergers, and Corporate re-organizations.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Filing of annual returns and various forms, documents.</p>
+          </li>
+          <li>
+            <p style="font-size:16px">Clause 49 review for compliance with fiscal, corporate and tax laws.</p>
+          </li>
+            <li>
+            <p style="font-size:16px">Secretarial Matters including share transfers.</p>
+          </li>
+            <li>
+            <p style="font-size:16px">Maintenance of Statutory records.</p>
+          </li>
+            <li>
+            <p style="font-size:16px">Consultancy on Public/Rights/Bonus Issue of shares.</p>
+          </li>
+            <li>
+            <p style="font-size:16px">Change of Name, Objects, Registered Office, etc.</p>
+          </li>
+        </ul>
+      </div>
+     <div class="col-sm-12 mt-5">
+ {% include 'CA_app/SERVICES/Request_form/request_form.html' %}
+      {% block request_content %}
+
+      {% endblock request_content %}
+    </div>
+  </div>
+  </div>
+</section>
+
+
+
+{% endblock content %}

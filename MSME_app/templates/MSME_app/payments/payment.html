@@ -1,0 +1,118 @@
+
+{% extends 'MSME_app/BASECODE/msme_H_F_base.html' %}
+{% load static %}
+{% block msme_content %}
+
+<style>
+
+    .billing-form {
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #bfbfbf;
+}
+</style>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <h2 class="mb-4">Make Payment</h2>
+            <form class="billing-form bg-light float-start p-3">
+                <div class="row g-3">
+                    <h4>Billing Address</h4>
+                    <div class="col-sm-6">
+                        <label class="form-label">First name</label>
+                        <input type="text" class="form-control" placeholder="First Name" required="">
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-label">Last name</label>
+                        <input type="text" class="form-control" placeholder="Last Name" required="">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Username</label>
+                        <input type="text" class="form-control" placeholder="Username" required="">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Email Id</label>
+                        <input type="email" class="form-control" placeholder="Email Id" required="">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Street Address</label>
+                        <input type="text" class="form-control" placeholder="Street Address" required="">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">2nd Address <span class="text-muted">(Optional)</span></label>
+                        <input type="text" class="form-control" placeholder="2nd Optional Address">
+                    </div>
+                    <div class="col-md-5">
+                        <label class="form-label">Country</label>
+                        <select class="form-select">
+                            <option>Choose...</option>
+                            <option>United States</option>
+                            <option>India</option>
+                            <option>Algeria</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">State</label>
+                        <select class="form-select">
+                            <option>Choose...</option>
+                            <option>Haryana</option>
+                            <option>Punjab</option>
+                            <option>Chandigarh</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Zip</label>
+                        <input type="text" class="form-control" placeholder="Zip Code" required="">
+                    </div>
+                </div>
+                <hr class="my-4">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="shipping-address" checked="">
+                    <label class="form-check-label" for="shipping-address">Shipping address is the same as my billing address</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="save-details">
+                    <label class="form-check-label" for="save-details">Save this full details for next time</label>
+                </div>
+                <div class="payment-details bg-success text-white p-3 my-3">
+                    <h4 class="mb-3">Payment</h4>
+                    <div class="my-3">
+                        <label class="form-label">Select Method</label>
+                        <select class="form-select">
+                            <option>Credit card</option>
+                            <option>Debit card</option>
+                            <option>PayPal</option>
+                        </select>
+                    </div>
+                    <div class="row gy-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Card Name</label>
+                            <input type="text" class="form-control" placeholder="Card Name" required="">
+                            <small class="text-light">Full name as displayed on card</small>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Credit Card Number</label>
+                            <input type="password" class="form-control" placeholder="Card Number" required="">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Expire Date</label>
+                            <input type="text" class="form-control" placeholder="Expire Date" required="">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">CVV Number</label>
+                            <input type="text" class="form-control" placeholder="CVV Number" required="">
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="billing-details" checked="">
+                                <label class="form-check-label" for="billing-details">Save billing details for next time</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary float-end" type="submit">Continue To Checkout</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock msme_content %}

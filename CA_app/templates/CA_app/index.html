@@ -1,0 +1,634 @@
+{% extends 'CA_app/BASECODE/CA_app_base.html' %}
+{% block content %}
+{% load static %}
+
+
+
+
+
+<section class="container-fluid">
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="{% static 'CA_app/images/gs.png'%}" class="d-block w-100" height="450px" width="100%" alt="...">
+        <div class="carousel-caption d-none d-md-block" >
+           <h1 class="ml13" style="margin-top:-250px">GST:Taxes Under GST</h1>
+        </div>
+      </div>
+      <div class="carousel-item">
+            <img src="{% static 'CA_app/images/banner_1.jpg'%}" class="d-block w-100" height="450px" width="100%" alt="...">
+          <div class="carousel-caption d-none d-md-block" >
+            <h1 class="ml14" style="margin-top:-250px;color:white">Income Tax</h1>
+
+          </div>
+      </div>
+      <div class="carousel-item">
+           <img src="{% static 'CA_app/images/banner11.jpg'%}" class="d-block w-100" height="450px" width="100%" alt="...">
+          <div class="carousel-caption d-none d-md-block" >
+              <h1 class="ml15" style="margin-top:-250px">ACCOUNTING</h1>
+          </div>
+      </div>
+        <div class="carousel-item">
+          <img src="{% static 'CA_app/images/inter.jpg'%}" class="d-block w-100" height="450px" alt="...">
+          <div class="carousel-caption d-none d-md-block" >
+            <h1 class="ml16" style="margin-top:-250px">INTERNATIONAL TAXATION</h1>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'CA_app/images/banner_pay1.jpg'%}" class="d-block w-100" height="450px" alt="...">
+          <div class="carousel-caption d-none d-md-block"  >
+            <h1 class="ml17" style="margin-top:-250px;color:white">PAYROLL</h1>
+          </div>
+        </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+</section>
+
+<!--About section start-->
+<section class="enquiry-sec" style="padding-top:-60px;padding-bottom:-30px">
+  <br>
+  <div class="container"  >
+    <div class="row">
+      <div class="col-md-12" id="abt" style="text-align:center" >
+        <h2 class="hover-underline-animation" >About <span style="color:#0077b5">Us</span>
+        </h2>
+      </div>
+      <div class="col-sm-6">
+        <div class="text-center">
+          <div class="text-right">
+            <img   src="{% static 'CA_app/images/about4.png'%}" height="300px" width="100%">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div >
+          <h5 style="color:#000; text-align:left">Meet <span style="color:#0077b5;">Virtual CA</span></h5>
+
+
+        </div>
+        <div >
+          <p >A reputed Tax Consultant &amp; Chartered Accountant, who has helped many individuals/organizations to establish <b style="color:#0077b5">business in India</b>.Virtual CA Services are one of the most preferred cost-effective options without impacting the quality of controls. With the changing business setups, ...
+          </p>
+        </div>
+        <br>
+        <div >
+            <div class="buttons">
+            <a href="{% url 'about'%}"><button class="offset">Read More</button></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!--About section end-->
+<hr>
+
+
+<section class="enquiry-sec">
+      <div class="container">
+        <h2>Our <span>Services</span>
+        </h2>
+      </div>
+
+
+<div class="container">
+     <div class="row">
+
+       <div class="col-sm-4">
+
+           <div class="services-box-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+            <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+            <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+            <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+          </svg>
+           <a class="serviceA" href="{% url 'international_Services'%}">
+          <div class="icons">
+            <img src="{% static 'CA_app/images/INTERNATIONAL SERVICES.png'%}" height="70px" width="70px" alt="" title="">
+          </div>
+          <h4>INTERNATIONAL TAXATION</h4>
+          <p>•Advisory services on cross border transactions,Expatriate Taxation.</p>
+           </a></div>
+
+       </div>
+
+<div class="col-sm-4">
+ <div class="services-box-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+              <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+              <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+              <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+              <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+            </svg>
+     <a class="serviceA" href="{% url 'Income_Tax'%}">
+            <div class="icons">
+              <img src="{% static 'CA_app/images/indirect-tax.png'%}" alt="" title="">
+            </div>
+            <h4>INCOME TAX</h4>
+            <p>Consultancy on various intricate matters pertaining to Income tax, Effective Tax Management and Advisory Services.</p>
+
+     </a></div>
+
+       </div>
+
+ <div class="col-sm-4">
+
+   <div class="services-box-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+                <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+                <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+              </svg>
+       <a class="serviceA" href="{% url 'Accounting'%}">
+              <div class="icons">
+                <img src="{% static 'CA_app/images/ACCOUNTING.png'%}" alt="" title="">
+              </div>
+              <h4>ACCOUNTING</h4>
+              <p>Accounting System Design & Implementation, budgeting, Financial Accounting.</p>
+
+       </a></div>
+     </div>
+
+
+     <div class="row">
+       <div class="col-sm-4">
+         <div class="services-box-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                  <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+                  <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+                  <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                  <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+                </svg>
+             <a class="serviceA" href="{% url 'Service_Non_Resident'%}">
+                <div class="icons">
+                  <img src="{% static 'CA_app/images/registration_img/non_resident.png'%}" height="70px" width="70px" alt="" title="">
+                </div>
+                <h4>Service Of Non Resident</h4>
+                <p>• Preparation of Monthly Salary Sheet, Computation and deposit of TDS, ESI, PF etc.</p>
+
+             </a></div>
+       </div>
+
+         <div class="col-sm-4">
+
+          <div class="services-box-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                    <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+                    <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+                    <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                    <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+                  </svg>
+
+               <a class="serviceA" href="{% url 'Corporate_Finance'%}">
+                  <div class="icons">
+                    <img src="{% static 'CA_app/images/CORPORATE-FINANCE.png'%}" height="80px" width="70px" alt="" title="">
+                  </div>
+                  <h4>CORPORATE FINANCE</h4>
+                  <p>Preparations of Project Reports, Preparation of CMA data for bank loans, Private placement of shares.</p>
+
+         </a> </div>
+       </div>
+
+         <div class="col-sm-4">
+         <div class="services-box-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                    <line class="top" x1="0" y1="0" x2="800" y2="0"></line>
+                    <line class="left" x1="0" y1="90%" x2="0" y2="920"></line>
+                    <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                    <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+                  </svg>
+             <a class="serviceA" href="{% url 'Audit'%}">
+                  <div class="icons">
+                    <img src="{% static 'CA_app/images/AUDIT.png'%}" height="70px" width="70px" alt="" title="">
+                  </div>
+                  <h4>AUDIT</h4>
+                  <p>Broadly, Audit involves the following, Audits conducted.</p>
+
+             </a></div>
+         </div>
+
+     </div>
+
+ <div class="row">
+  <div class="col-sm-4">
+    <div class="services-box-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+                <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+                <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+              </svg>
+        <a class="serviceA" href="{% url 'GST'%}">
+              <div class="icons">
+                <img src="{% static 'CA_app/images/Gst-icon.png'%}" height="70px" width="70px" alt="" title="">
+              </div>
+              <h4>GST</h4>
+              <p>GST Migration, Obtaining GST Registration, Consultancy on matters related to GST.</p>
+
+        </a></div>
+
+    </div>
+
+ <div class="col-sm-4">
+
+   <div class="services-box-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                  <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+                  <line class="left" x1="0" y1="100%" x2="0" y2="-920"></line>
+                  <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                  <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+                </svg>
+       <a class="serviceA" href="{% url 'Payroll'%}">
+                <div class="icons">
+                  <img src="{% static 'CA_app/images/PAYROLL.png'%}" height="70px" width="70px" alt="" title="">
+                </div>
+                <h4>PAYROLL</h4>
+                <p>• Preparation of Monthly Salary Sheet, Computation and deposit of TDS, ESI, PF etc.</p>
+
+       </a></div>
+   </div>
+
+    <div class="col-sm-4">
+  <div class="services-box-item">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                        <line class="top" x1="0" y1="0" x2="800" y2="0"></line>
+                        <line class="left" x1="0" y1="90%" x2="0" y2="920"></line>
+                        <line class="bottom" x1="100%" y1="100%" x2="-600" y2="100%"></line>
+                        <line class="right" x1="100%" y1="0" x2="100%" y2="1380"></line>
+                      </svg>
+      <a class="serviceA" href="{% url 'Outsourcing'%}">
+                      <div class="icons">
+                        <img src="{% static 'CA_app/images/OUTSOURCING.png'%}" height="70px" width="70px" alt="" title="">
+                      </div>
+                      <h4>OUTSOURCING</h4>
+                      <p>Broadly, Audit involves the following, Audits conducted.</p>
+
+
+      </a></div>
+
+    </div>
+
+  </div>
+
+
+   </div>
+
+
+</section>
+
+
+<section>
+<!--services section end-->
+
+<!--News section start-->
+</section>
+<section class="news-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="text-align:center">
+        <h2 style="color:white;">News Section</h2>
+      </div>
+      <div class="col-md-4">
+        <div class="news-item-box  " >
+          <h5 >News</h5>
+          <marquee id="m2" height="283" direction="up" srolldelay="20" scrollamount="1" onmouseover="this.stop()" onmouseout="this.start()">
+            <table  id="ctl00_DataList1" cellspacing="0" border="0" style="width:100%;border-collapse:collapse">
+              <tr>
+                <td>
+                  <div class="news2d">
+
+                      {% for N in index %}
+                      <br>
+                      <hr>
+                      <a class="hedingnews"> <h6> {{N.title}} </h6>
+                      </a>
+                      <br>
+                        {{N.images}}
+                        <br>
+                        {{N.url}}
+                      <br>
+
+                        {% endfor %}
+                  </div>
+
+                    <hr>
+                    <br>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <br>
+                  <div class="news2d">
+                    <a href="#">Govt Informs 15th FFC About Implausibility of Meeting Revenue Targets of 5 Years</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="news2d">
+                    <a href="#">No excuses, target over Rs 1 lakh crore GST collection in remaining months</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="news2d">
+                    <a href="#">GST Council meeting today: Lease rates, refund for exporters on agenda</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="news2d">
+                    <a href="#">GST Council meeting today. Will Nirmala Sitharaman increase GST rates, slabs?</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="news2d">
+                    <a href="#">CBIC further extends enabling New Changes in GSTR-9 and GSTR-9C to Dec 21</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="news2d">
+                    <a class="hedingnews">18 Dec 2021</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="news2d">
+                    <a href="#">Industry Favours New GSTR Slow Implementation &amp; 4-digits HSN Code</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="news2d">
+                    <a href="#">Centre releases over Rs 35,000 crore as pending GST compensation to states</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="news2d">
+                    <a href="#">States get GST dues ahead of key meet</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="news2d">
+                    <a href="#">Under Fire, Govt Releases Rs 35,298 Crore GST Compensation to States</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="news2d">
+                    <a href="#">CBDT extends date for Third Instalment of Advance Tax for FY 2019-20 in North Eastern States</a>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </marquee>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="news-item-box">
+          <h5>Due Date Reminder</h5>
+          <table id="ctl00_DataListGovind" cellspacing="0" border="0" style="border-collapse:collapse">
+            <tbody>
+              <tr>
+                <td>
+                  <a id="ctl00_DataListGovind_ctl00_lb1" href="#">Jan</a>
+                </td>
+                <td>
+                  <a id="ctl00_DataListGovind_ctl01_lb1" href="#">Feb</a>
+                </td>
+                <td>
+                  <a id="ctl00_DataListGovind_ctl02_lb1" href="#">Mar</a>
+                </td>
+                <td>
+                  <a id="ctl00_DataListGovind_ctl03_lb1" href="#">Apr</a>
+                </td>
+                <td>
+                  <a id="ctl00_DataListGovind_ctl04_lb1" href="#">May</a>
+                </td>
+                <td>
+                  <a id="ctl00_DataListGovind_ctl05_lb1" href="#">June</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a id="ctl00_DataListGovind_ctl06_lb1" href="#">July</a>
+                </td>
+                <td>
+                  <a id="ctl00_DataListGovind_ctl07_lb1" href="#">Aug</a>
+                </td>
+                <td>
+                  <a id="ctl00_DataListGovind_ctl08_lb1" href="#">Sep</a>
+                </td>
+                <td>
+                  <a id="ctl00_DataListGovind_ctl09_lb1" href="#">Oct</a>
+                </td>
+                <td>
+                  <a id="ctl00_DataListGovind_ctl10_lb1" href="#">Nov</a>
+                </td>
+                <td>
+                  <a id="ctl00_DataListGovind_ctl11_lb1" href="#">Dec</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a id="ctl00_DataListGovind_ctl12_lb1" href="#">All</a>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <marquee id="ml" height="220" direction="up" srolldelay="20" scrollamount="1" onmouseover="this.stop()" onmouseout="this.start()">
+            <div class="news_blog">
+              <span class="hedingnews">{{ news1 }}</span>
+
+
+              <span class="arrownews">furnishing of challan-cum-statement in respect of tax deducted u/s 194-IA in month of November 19</span>
+              <br>
+            </div>
+            <div class="news_blog">
+              <span class="hedingnews">30 Dec 19</span>
+              <span class="arrownews">Due date for furnishing of challan-cum-statement in respect of tax deducted u/s 194-IB in month of November 19</span>
+              <br>
+            </div>
+            <div class="news_blog">
+              <span class="hedingnews">07 Jan 20</span>
+
+              <span class="arrownews">Payment of TDS of December 2019 (For Govt deductors paying through challan)</span>
+              <br>
+            </div>
+            <div class="news_blog">
+              <span class="hedingnews">11 Jan 20</span>
+              <span class="arrownews">Filing of GSTR-1 for the month of Dec, 2019 , whose turnover &gt; 1.5cr</span>
+              <br>
+            </div>
+            <div class="news_blog">
+              <span class="hedingnews">13 Jan 20</span>
+              <span class="arrownews">Filing of GSTR-6 for input service distributor for the month of December 2019</span>
+              <br>
+            </div>
+          </marquee>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="news-item-box">
+          <h5>Blog News</h5>
+          <marquee id="m2" height="283" direction="up" scrolldelay="20" scrollamount="1" onmouseover="this.stop()" onmouseout="this.start()">
+            <li class="Prodetails">
+              <span style="font-weight:700">09 may 2022</span>
+              <span style="font-weight:700">
+                <a target="_blank" href="{% url 'blog1'%}">Blog1</a> </span>
+              <img src="{% static 'CA_app/images/blog1.jpg'%}" height="100px" width="100%">
+
+              <span>How an Accounting Firm Can Get Popularity.....</span>
+            </li>
+
+<hr>
+<br>
+               <li class="Prodetails">
+              <span style="font-weight:700">20 june 2022</span>
+              <span style="font-weight:700">
+                <a target="_blank" href="{% url 'blog2'%}">Blog2</a> </span>
+              <img src="{% static 'CA_app/images/blog2.jpg'%}" height="100px" width="100%">
+
+              <span>Introducing CA Firm or Practising Chartered Accountancy in India.....</span>
+            </li>
+
+
+              <hr>
+<br>
+               <li class="Prodetails">
+              <span style="font-weight:700">25 june 2022</span>
+              <span style="font-weight:700">
+                <a target="_blank" href="{% url 'blog3'%}">Blog3</a> </span>
+              <img src="{% static 'CA_app/images/blog3.jpg'%}" height="100px" width="100%">
+
+              <span>ICAI Extends Last Date For Multipurpose Empanelment .....</span>
+            </li>
+          </marquee>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--News section end-->
+
+<br>
+<section id="testimonial-slider" class="py-5" style="background-color: red; /* For browsers that do not support gradients */
+background-image: linear-gradient(#1572A1, #1572A1);">
+  <div class="container">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="col-sm-8 mx-auto">
+        <div class="carousel-inner text-center text-white py-5">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <div class="user-photo shadow">
+              <img src="{% static 'CA_app/images/dummy1.png'%}" class="img-fluid" alt="testimonial slider">
+            </div>
+            <div class="slider-caption mt-3">
+              <p class="fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <figcaption class="blockquote-footer mt-3 text-white fs-5">
+                <cite>Gurdeep Dahiya</cite>
+              </figcaption>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="10000">
+            <div class="user-photo shadow">
+              <img src="{% static 'CA_app/images/dummy1.png'%}" height="246px" width="205px" class="img-fluid" alt="testimonial slider">
+            </div>
+            <div class="slider-caption mt-3">
+              <p class="fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <figcaption class="blockquote-footer mt-3 text-white fs-5">
+                <cite>Rajnish Kumar</cite>
+              </figcaption>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="10000">
+            <div class="user-photo shadow">
+              <img src="{% static 'CA_app/images/dummy1.png'%}" class="img-fluid" alt="testimonial slider">
+            </div>
+            <div class="slider-caption mt-3">
+              <p class="fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <figcaption class="blockquote-footer mt-3 text-white fs-5">
+                <cite>Pardeep Dahiya</cite>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+<br>
+
+<!--<button type="button" class="btn btn-danger btn-floating btn-lg" style="background-color:#0077b5;border:none" id="btn-back-to-top">-->
+<!--  <i class="fas fa-arrow-up"></i>-->
+<!--</button>-->
+
+
+
+
+
+
+<!--<button class="open-button" onclick="openForm()">-->
+
+<!--<i class='fas fa-comments' style='font-size:48px;color:blue; text-align:left'></i>-->
+
+<!--    </button>-->
+
+<!--<div class="chat-popup" id="myForm">-->
+<!--  <form action="/action_page.php" class="form-container">-->
+
+
+<!--    <label for="msg"><b>Message</b></label>-->
+<!--    <textarea placeholder="Type message.." name="msg" required></textarea>-->
+
+<!--      <button type="submit" class="btn"><b style="color:white">Send</b></button>-->
+<!--    <button type="button" class="btn cancel" onclick="closeForm()"><b style="color:white">Close</b></button>-->
+<!--  </form>-->
+<!--</div>-->
+
+{% endblock content %}
